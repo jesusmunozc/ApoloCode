@@ -1,0 +1,138 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
+export default function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      titleKey: "services.webapp.title",
+      descriptionKey: "services.webapp.description",
+      icon: "⚡",
+      features: [
+        "services.webapp.feature1",
+        "services.webapp.feature2",
+        "services.webapp.feature3",
+        "services.webapp.feature4",
+      ],
+    },
+    {
+      titleKey: "services.web.title",
+      descriptionKey: "services.web.description",
+      icon: "💻",
+      features: [
+        "services.web.feature1",
+        "services.web.feature2",
+        "services.web.feature3",
+        "services.web.feature4",
+      ],
+    },
+    {
+      titleKey: "services.ecommerce.title",
+      descriptionKey: "services.ecommerce.description",
+      icon: "🛒",
+      features: [
+        "services.ecommerce.feature1",
+        "services.ecommerce.feature2",
+        "services.ecommerce.feature3",
+        "services.ecommerce.feature4",
+      ],
+    },
+    {
+      titleKey: "services.maintenance.title",
+      descriptionKey: "services.maintenance.description",
+      icon: "🛠️",
+      features: [
+        "services.maintenance.feature1",
+        "services.maintenance.feature2",
+        "services.maintenance.feature3",
+        "services.maintenance.feature4",
+      ],
+    },
+  ];
+
+  return (
+    <section
+      id="services"
+      className="pt-20 lg:pt-24 pb-8 lg:pb-12 bg-white relative"
+    >
+      <div className="container mx-auto container-padding">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="heading-2 mb-6">{t("services.title")}</h2>
+          <p className="text-large max-w-3xl mx-auto">
+            {t("services.description")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden animate-slide-up"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              {/* Subtle premium border effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col">
+                {/* Centered icon */}
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-all duration-300 mx-auto">
+                    <span className="text-3xl text-secondary-700 group-hover:text-primary-700 transition-colors duration-300">
+                      {service.icon}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Centered title with fixed height */}
+                <div className="text-center mb-6">
+                  <div className="h-24 flex items-center justify-center">
+                    <h3 className="text-3xl font-bold text-secondary-900 group-hover:text-primary-700 transition-colors duration-300 leading-tight">
+                      {t(service.titleKey)}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Aligned price */}
+                <div className="text-center mb-6">
+                  <div className="bg-secondary-900 text-white font-bold text-xl px-6 py-3 rounded-xl shadow-sm group-hover:bg-primary-600 transition-colors duration-300 inline-block">
+                    {t(service.titleKey.replace("title", "price"))}
+                  </div>
+                </div>
+
+                <p className="text-sm text-secondary-600 mb-6 flex-grow leading-relaxed">
+                  {t(service.descriptionKey)}
+                </p>
+
+                {/* Clean features list */}
+                <div className="space-y-2 mb-6">
+                  {service.features.map((featureKey, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-center text-sm"
+                    >
+                      <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-secondary-700">
+                        {t(featureKey)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom-aligned CTA button */}
+                <div className="mt-auto">
+                  <button className="w-full bg-secondary-900 text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-sm">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Subtle gradient separator */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+    </section>
+  );
+}
