@@ -20,8 +20,8 @@ const translations = {
 
     // Hero
     "hero.title": "We Design",
-    "hero.title.highlight": "Custom Websites",
-    "hero.title.end": "For Your Business",
+    "hero.title.highlight": "your personalized website",
+    "hero.title.end": "for your business",
     "hero.description":
       "We create stunning, high-performance websites and web applications that help your business grow and succeed in the digital world.",
     "hero.cta.primary": "Start Your Project",
@@ -34,8 +34,7 @@ const translations = {
     "services.cta": "Hire Now",
 
     "services.web.title": "Landing Page",
-    "services.web.description":
-      "High-converting landing pages designed to capture leads and showcase your key product or service effectively.",
+    "services.web.description": "Website similar to this one",
     "services.web.price": "$800.000 COP",
     "services.web.feature1": "Unique design",
     "services.web.feature2": "Animations",
@@ -48,12 +47,11 @@ const translations = {
     "services.web.feature9": "60 days warranty and maintenance",
 
     "services.ecommerce.title": "Online Store",
-    "services.ecommerce.description":
-      "Complete online store development with secure payment integration and inventory management systems.",
+    "services.ecommerce.description": "Better known as E-commerce",
     "services.ecommerce.price": "$1.400.000 COP",
     "services.ecommerce.feature1": "Personalized design",
     "services.ecommerce.feature2": "Responsive design",
-    "services.ecommerce.feature3": "Up to 50 products",
+    "services.ecommerce.feature3": "Entry of 50 products",
     "services.ecommerce.feature4": "SEO optimization for products",
     "services.ecommerce.feature5": "Load optimization",
     "services.ecommerce.feature6": "Social media integration",
@@ -62,8 +60,7 @@ const translations = {
     "services.ecommerce.feature9": "90 days warranty and maintenance",
 
     "services.webapp.title": "Informational Website",
-    "services.webapp.description":
-      "Professional websites to showcase your business, services, and build trust with detailed information about your company.",
+    "services.webapp.description": "About your business or service",
     "services.webapp.price": "$400.000 COP",
     "services.webapp.feature1": "Traditional and static design",
     "services.webapp.feature2": "Responsive design",
@@ -76,11 +73,11 @@ const translations = {
     "services.maintenance.title": "Website Maintenance",
     "services.maintenance.description":
       "Ongoing support and maintenance to keep your website secure, updated, and performing at its best.",
-    "services.maintenance.price": "$60.000 COP/mes",
-    "services.maintenance.feature1": "Security Updates",
-    "services.maintenance.feature2": "Performance Monitoring",
-    "services.maintenance.feature3": "Content Updates",
-    "services.maintenance.feature4": "Technical Support",
+    "services.maintenance.price": "$60.000 COP/month",
+    "services.maintenance.feature1": "Security updates",
+    "services.maintenance.feature2": "Performance monitoring",
+    "services.maintenance.feature3": "Content updates",
+    "services.maintenance.feature4": "Technical support",
 
     // Portfolio
     "portfolio.title": "Our Portfolio",
@@ -98,16 +95,16 @@ const translations = {
 
     "portfolio.project5.title": "Kárdhamo Desserts",
     "portfolio.project5.description":
-      "Inventory and sales control system for dessert business with real-time management and analytics.",
+      "Inventory and sales control system for dessert business with real-time management and data analysis.",
     "portfolio.project5.category": "Business App",
 
     "portfolio.project6.title": "Celebrity Barber",
     "portfolio.project6.description":
-      "Modern barbershop website with appointment booking system, service showcase, and professional presentation.",
+      "Modern website for barbershop with appointment booking system, service showcase and professional presentation.",
     "portfolio.project6.category": "Business",
 
     // Contact
-    "contact.title": "Get In Touch",
+    "contact.title": "Get in Touch",
     "contact.description":
       "Ready to start your project? Contact us today and let's discuss how we can help bring your vision to life.",
     "contact.subtitle": "Let's Start a Conversation",
