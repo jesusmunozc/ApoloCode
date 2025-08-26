@@ -48,25 +48,6 @@ export default function Hero() {
                 
                 {/* Simplified overlay */}
                 <div className="absolute inset-0 bg-secondary-900/10"></div>
-                
-                {/* Simplified floating ApoloCode logo */}
-                <div className="absolute bottom-6 left-6 bg-white/95 p-4 rounded-lg shadow-md border border-secondary-200 transform group-hover:translate-y-[-2px] transition-transform duration-300">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-secondary-900 p-1.5 rounded-lg">
-                      <Image
-                        src="/images/apolocode-logo.png"
-                        alt="ApoloCode Logo"
-                        width={28}
-                        height={28}
-                        className="object-contain"
-                      />
-                    </div>
-                    <div>
-                      <div className="text-secondary-900 font-bold text-sm">ApoloCode</div>
-                      <div className="text-primary-600 text-xs font-medium">Professional Development</div>
-                    </div>
-                  </div>
-                </div>
               </div>
               
               {/* Simplified floating elements */}
