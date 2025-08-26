@@ -80,8 +80,101 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
-          {/* FAQ Section */}
-          <div className="animate-slide-up">
+          {/* Enhanced Contact Form - First on mobile */}
+          <div className="card p-6 lg:p-10 animate-slide-up bg-gradient-to-br from-secondary-50 to-primary-50/30 relative order-1 lg:order-2">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/30 rounded-2xl opacity-60"></div>
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-5 lg:space-y-8 relative z-10"
+            >
+              <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-bold text-secondary-700 mb-2 lg:mb-3 tracking-wider uppercase"
+                  >
+                    {t("contact.form.name")} *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    placeholder={t("contact.form.placeholder.name")}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-bold text-secondary-700 mb-2 lg:mb-3 tracking-wider uppercase"
+                  >
+                    {t("contact.form.email")} *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    placeholder={t("contact.form.placeholder.email")}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-bold text-secondary-700 mb-2 lg:mb-3 tracking-wider uppercase"
+                >
+                  {t("contact.form.company")}
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                  placeholder={t("contact.form.placeholder.company")}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-bold text-secondary-700 mb-2 lg:mb-3 tracking-wider uppercase"
+                >
+                  {t("contact.form.message")} *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 resize-vertical bg-white/80 backdrop-blur-sm lg:rows-6"
+                  placeholder={t("contact.form.placeholder.message")}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full btn-primary py-3 lg:py-5 text-lg font-bold tracking-wide"
+              >
+                {t("contact.form.submit")}
+              </button>
+            </form>
+          </div>
+
+          {/* FAQ Section - Second on mobile */}
+          <div className="animate-slide-up order-2 lg:order-1">
             <h3 className="heading-3 mb-4 lg:mb-6 text-primary-600">
               {t("faq.title")}
             </h3>
@@ -170,96 +263,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Enhanced Contact Form */}
-          <div className="card p-10 animate-slide-up bg-gradient-to-br from-secondary-50 to-primary-50/30 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/30 rounded-2xl opacity-60"></div>
-            <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-bold text-secondary-700 mb-3 tracking-wider uppercase"
-                  >
-                    {t("contact.form.name")} *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.name")}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-bold text-secondary-700 mb-3 tracking-wider uppercase"
-                  >
-                    {t("contact.form.email")} *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.email")}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-bold text-secondary-700 mb-3 tracking-wider uppercase"
-                >
-                  {t("contact.form.company")}
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-6 py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                  placeholder={t("contact.form.placeholder.company")}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-bold text-secondary-700 mb-3 tracking-wider uppercase"
-                >
-                  {t("contact.form.message")} *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-6 py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 resize-vertical bg-white/80 backdrop-blur-sm"
-                  placeholder={t("contact.form.placeholder.message")}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full btn-primary py-5 text-lg font-bold tracking-wide"
-              >
-                {t("contact.form.submit")}
-              </button>
-            </form>
           </div>
         </div>
       </div>

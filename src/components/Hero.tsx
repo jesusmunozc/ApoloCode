@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-br from-secondary-50 via-white to-secondary-50 white-wall-texture tech-pattern-elegant subtle-texture-base tech-overlay tech-overlay-enhanced tech-shine overflow-hidden relative"
+      className="min-h-screen flex items-center pt-20 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-20 bg-gradient-to-br from-secondary-50 via-white to-secondary-50 white-wall-texture tech-pattern-elegant subtle-texture-base tech-overlay tech-overlay-enhanced tech-shine overflow-hidden relative"
     >
       {/* Subtle tech accents with enhanced blue effects */}
       <div className="absolute inset-0 opacity-30">
@@ -64,10 +64,10 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:container-padding relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-12 lg:gap-16 min-h-[60vh] sm:min-h-[65vh] lg:min-h-[70vh]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-16 min-h-[70vh] sm:min-h-[75vh] lg:min-h-[70vh]">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-center lg:text-left animate-fade-in w-full">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 lg:mb-6 relative">
+          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in order-1 lg:order-1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
               <span className="text-secondary-900 relative inline-block align-baseline">
                 <span className="inline-block align-baseline">
                   {displayedText}
@@ -94,10 +94,40 @@ export default function Hero() {
                 {t("hero.title.end")}
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-secondary-600 leading-relaxed mb-6 lg:mb-10 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base lg:text-xl text-secondary-600 leading-relaxed mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0">
               {t("hero.description")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full max-w-md sm:max-w-none mx-auto lg:mx-0">
+
+            {/* Experience Statistics */}
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center lg:justify-start mb-6 lg:mb-8 px-2 sm:px-0">
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                  3+
+                </div>
+                <div className="text-sm sm:text-base text-secondary-600">
+                  Años de experiencia
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                  20+
+                </div>
+                <div className="text-sm sm:text-base text-secondary-600">
+                  Proyectos realizados
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                  100%
+                </div>
+                <div className="text-sm sm:text-base text-secondary-600">
+                  Satisfacción del cliente
+                </div>
+              </div>
+            </div>
+
+            {/* Buttons for desktop */}
+            <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full max-w-md sm:max-w-none mx-auto lg:mx-0">
               <a
                 href="#contact"
                 className="bg-secondary-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center"
@@ -113,11 +143,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Content */}
-          <div className="lg:w-1/2 flex justify-center animate-slide-up w-full">
-            <div className="relative group w-full max-w-lg">
+          {/* Right Content - Image */}
+          <div className="w-full lg:w-1/2 flex justify-center animate-slide-up order-2 lg:order-2 mb-4 sm:mb-6 lg:mb-0">
+            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Professional Development Image */}
-              <div className="relative w-full aspect-[5/4] max-w-[500px] mx-auto rounded-3xl overflow-hidden shadow-large transform group-hover:scale-[1.02] transition-all duration-500">
+              <div className="relative w-full aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-large transform group-hover:scale-[1.02] transition-all duration-500">
                 <Image
                   src="/images/hero-development.png"
                   alt="Professional Web Development with React and Next.js"
@@ -133,8 +163,26 @@ export default function Hero() {
               </div>
 
               {/* Simplified floating elements */}
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-100/80 rounded-2xl rotate-12 animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-secondary-100/80 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 bg-primary-100/80 rounded-2xl rotate-12 animate-pulse"></div>
+              <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-8 h-8 sm:w-12 sm:h-12 bg-secondary-100/80 rounded-full animate-pulse delay-1000"></div>
+            </div>
+          </div>
+
+          {/* Buttons - Moved to bottom on mobile */}
+          <div className="w-full lg:hidden flex flex-col items-center order-3">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-sm sm:max-w-md">
+              <a
+                href="#contact"
+                className="bg-secondary-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center text-sm sm:text-base"
+              >
+                {t("hero.cta.primary")}
+              </a>
+              <a
+                href="#portfolio"
+                className="border-2 border-secondary-900 text-secondary-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-secondary-900 hover:text-white transition-colors duration-300 text-center text-sm sm:text-base"
+              >
+                {t("hero.cta.secondary")}
+              </a>
             </div>
           </div>
         </div>

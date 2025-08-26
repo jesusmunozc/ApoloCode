@@ -9,12 +9,15 @@ export default function Services() {
     {
       titleKey: "services.webapp.title",
       descriptionKey: "services.webapp.description",
-      icon: "⚡",
+      icon: "📄",
       features: [
         "services.webapp.feature1",
         "services.webapp.feature2",
         "services.webapp.feature3",
         "services.webapp.feature4",
+        "services.webapp.feature5",
+        "services.webapp.feature6",
+        "services.webapp.feature7",
       ],
     },
     {
@@ -26,6 +29,11 @@ export default function Services() {
         "services.web.feature2",
         "services.web.feature3",
         "services.web.feature4",
+        "services.web.feature5",
+        "services.web.feature6",
+        "services.web.feature7",
+        "services.web.feature8",
+        "services.web.feature9",
       ],
     },
     {
@@ -37,6 +45,11 @@ export default function Services() {
         "services.ecommerce.feature2",
         "services.ecommerce.feature3",
         "services.ecommerce.feature4",
+        "services.ecommerce.feature5",
+        "services.ecommerce.feature6",
+        "services.ecommerce.feature7",
+        "services.ecommerce.feature8",
+        "services.ecommerce.feature9",
       ],
     },
     {
@@ -108,16 +121,16 @@ export default function Services() {
                   </div>
                 </div>
 
-                <p className="text-sm text-secondary-600 mb-6 flex-grow leading-relaxed relative z-10">
+                <p className="text-base text-secondary-600 mb-4 leading-relaxed relative z-10 text-center">
                   {t(service.descriptionKey)}
                 </p>
 
-                {/* Clean features list */}
-                <div className="space-y-2 mb-6 relative z-10">
+                {/* Clean features list - Start from top */}
+                <div className="space-y-2 mb-6 flex-grow relative z-10">
                   {service.features.map((featureKey, featureIndex) => (
                     <div
                       key={featureIndex}
-                      className="flex items-center text-sm"
+                      className="flex items-center text-base"
                     >
                       <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3 flex-shrink-0"></div>
                       <span className="text-secondary-700">
@@ -129,7 +142,7 @@ export default function Services() {
 
                 {/* Bottom-aligned CTA button */}
                 <div className="mt-auto relative z-10">
-                  <button className="w-full bg-secondary-900 text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-sm">
+                  <button className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base">
                     {t("services.cta")}
                   </button>
                 </div>

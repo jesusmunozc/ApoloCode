@@ -14,7 +14,7 @@ export default function Header() {
       {/* Subtle tech accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300/30 to-transparent"></div>
 
-      <nav className="container mx-auto container-padding relative z-10">
+      <nav className="container mx-auto px-4 sm:px-6 lg:container-padding relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
@@ -54,7 +54,7 @@ export default function Header() {
           </div>
 
           {/* Enhanced Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-2 sm:space-x-3">
             <LanguageSelector />
             <button
               className="flex flex-col space-y-1.5 p-2 rounded-lg hover:bg-secondary-100 transition-colors duration-300"
