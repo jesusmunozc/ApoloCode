@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-16 min-h-[70vh] sm:min-h-[75vh] lg:min-h-[70vh]">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in order-1 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
               <span className="text-secondary-900 relative inline-block align-baseline">
                 <span className="inline-block align-baseline">
                   {displayedText}
