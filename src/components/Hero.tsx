@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-16 min-h-[70vh] sm:min-h-[75vh] lg:min-h-[70vh]">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in order-1 lg:order-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
               <span className="text-secondary-900 relative inline-block align-baseline">
                 <span className="inline-block align-baseline">
                   {displayedText}
@@ -99,29 +99,29 @@ export default function Hero() {
             </p>
 
             {/* Experience Statistics */}
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center lg:justify-start mb-6 lg:mb-8 px-2 sm:px-0">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:flex lg:gap-8 justify-center lg:justify-start mb-6 lg:mb-8 px-1 sm:px-2 lg:px-0">
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-primary-600 mb-0.5 lg:mb-1">
                   3+
                 </div>
-                <div className="text-sm sm:text-base text-secondary-600">
+                <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
                   Años de experiencia
                 </div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-primary-600 mb-0.5 lg:mb-1">
                   20+
                 </div>
-                <div className="text-sm sm:text-base text-secondary-600">
+                <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
                   Proyectos realizados
                 </div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1">
+                <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-primary-600 mb-0.5 lg:mb-1">
                   100%
                 </div>
-                <div className="text-sm sm:text-base text-secondary-600">
-                  Satisfacción del cliente
+                <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
+                  Clientes satisfechos
                 </div>
               </div>
             </div>
