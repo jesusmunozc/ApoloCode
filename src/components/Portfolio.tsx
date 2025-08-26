@@ -46,22 +46,18 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="pt-8 lg:pt-12 pb-8 lg:pb-12 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="pt-8 lg:pt-12 pb-8 lg:pb-12 bg-gradient-to-br from-gray-50 via-white to-gray-50 white-wall-texture relative overflow-hidden"
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Enhanced tech background pattern */}
+      <div className="absolute inset-0 opacity-25">
         <div className="absolute top-10 left-1/4 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-secondary-100 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           {/* Enhanced section header */}
-          <div className="inline-block mb-4">
-            <span className="bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">
-              Nuestros Proyectos
-            </span>
-          </div>
           <h2 className="heading-2 mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
             {t("portfolio.title")}
           </h2>
@@ -86,12 +82,12 @@ export default function Portfolio() {
                   animationFillMode: "forwards",
                 }}
               >
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 group hover:-translate-y-3 overflow-hidden">
+                <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 group hover:-translate-y-3 overflow-hidden">
                   {/* Enhanced animated background elements */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <div className="absolute top-0 right-0 w-80 h-40 bg-gradient-to-l from-primary-500/8 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-32 bg-gradient-to-r from-secondary-500/8 via-transparent to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/3 via-transparent to-secondary-500/3"></div>
+                    <div className="absolute top-0 right-0 w-80 h-40 bg-gradient-to-l from-primary-500/12 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-32 bg-gradient-to-r from-secondary-500/12 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/8 via-transparent to-secondary-500/8"></div>
                   </div>
 
                   {/* Main horizontal layout */}
@@ -100,7 +96,7 @@ export default function Portfolio() {
                     <div className="flex-shrink-0 relative">
                       <div className="w-16 h-16 sm:w-18 sm:h-18 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center shadow-xl border-2 border-gray-100 group-hover:shadow-2xl group-hover:scale-110 group-hover:border-primary-200 transition-all duration-500 relative overflow-hidden">
                         {/* Enhanced background pattern for logo container */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/8 to-secondary-500/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         {project.logo && !imageErrors[index] ? (
                           <div className="relative z-10">

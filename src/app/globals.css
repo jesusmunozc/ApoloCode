@@ -42,18 +42,98 @@
     filter: drop-shadow(0 4px 12px rgba(249, 115, 22, 0.3));
   }
 
-  /* Professional button styles */
+  /* Professional button styles with tech effects */
   .btn-primary {
-    @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-primary-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-200;
+    @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-primary-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-200 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+    transition: left 0.4s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    );
+    background-size: 6px 6px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .btn-primary:hover::after {
+    opacity: 1;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-200;
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary-200 relative overflow-hidden;
   }
 
-  /* Card styles */
+  .btn-secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(249, 115, 22, 0.2),
+      transparent
+    );
+    transition: left 0.4s;
+  }
+
+  .btn-secondary:hover::before {
+    left: 100%;
+  }
+
+  /* Card styles with enhanced tech effects */
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-secondary-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-white rounded-2xl shadow-soft border border-secondary-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.05),
+      rgba(30, 41, 59, 0.05)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card:hover::before {
+    opacity: 1;
   }
 
   /* Professional section spacing */
@@ -160,6 +240,52 @@
     }
   }
 
+  /* FAQ Professional Animations - Ultra Smooth */
+  .faq-content {
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: translateY(-10px);
+  }
+
+  .faq-content-open {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transform: translateY(0);
+  }
+
+  .faq-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+
+  .faq-icon-open {
+    transform: rotate(45deg);
+  }
+
+  .faq-text {
+    transition: opacity 0.3s ease-out;
+    transition-delay: 0.1s;
+  }
+
+  .faq-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-card:hover {
+    transform: translateY(-1px);
+  }
+
+  .faq-card-active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.1);
+  }
+
   /* Professional shadows */
   .shadow-soft {
     box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
@@ -175,6 +301,568 @@
     box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.12),
       0 20px 30px -10px rgba(0, 0, 0, 0.05);
   }
+
+  /* Subtle and elegant technology textures */
+  .tech-pattern-dots {
+    background-image: radial-gradient(
+      circle at 2px 2px,
+      rgba(30, 41, 59, 0.025) 1.5px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+  }
+
+  .tech-pattern-grid {
+    background-image: linear-gradient(
+        rgba(30, 41, 59, 0.018) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(249, 115, 22, 0.012) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .tech-pattern-circuit {
+    background-image: radial-gradient(
+        circle at 20% 50%,
+        rgba(249, 115, 22, 0.02) 2px,
+        transparent 2px
+      ),
+      radial-gradient(
+        circle at 80% 50%,
+        rgba(30, 41, 59, 0.015) 1px,
+        transparent 1px
+      ),
+      linear-gradient(0deg, rgba(249, 115, 22, 0.005) 1px, transparent 1px);
+    background-size: 80px 40px, 60px 30px, 120px 120px;
+  }
+
+  .tech-pattern-hexagon {
+    background-image: radial-gradient(
+        circle at 30% 30%,
+        rgba(249, 115, 22, 0.018) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 70% 70%,
+        rgba(30, 41, 59, 0.012) 1px,
+        transparent 1px
+      );
+    background-size: 60px 60px, 80px 80px;
+    background-position: 0 0, 30px 30px;
+  }
+
+  .tech-pattern-code {
+    background-image: linear-gradient(
+        120deg,
+        rgba(249, 115, 22, 0.008) 1px,
+        transparent 1px
+      ),
+      linear-gradient(60deg, rgba(30, 41, 59, 0.008) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px;
+  }
+
+  /* Enhanced elegant floating elements pattern - More visible */
+  .tech-pattern-elegant {
+    background-image: 
+      /* Enhanced floating particles effect */ radial-gradient(
+        circle at 20% 30%,
+        rgba(249, 115, 22, 0.035) 2px,
+        transparent 2px
+      ),
+      radial-gradient(
+        circle at 60% 70%,
+        rgba(30, 41, 59, 0.028) 1.5px,
+        transparent 1.5px
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(249, 115, 22, 0.02) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 15% 85%,
+        rgba(30, 41, 59, 0.015) 1px,
+        transparent 1px
+      ),
+      /* Enhanced connecting lines */
+        linear-gradient(30deg, rgba(249, 115, 22, 0.012) 1px, transparent 1px),
+      linear-gradient(150deg, rgba(30, 41, 59, 0.012) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249, 115, 22, 0.008) 1px, transparent 1px);
+    background-size: 140px 110px, 180px 160px, 120px 90px, 100px 80px,
+      280px 280px, 220px 220px, 400px 400px;
+    background-position: 0 0, 70px 55px, 35px 18px, 50px 40px, 0 0, 110px 110px,
+      200px 200px;
+  }
+
+  /* Subtle continuous texture system for all sections - More visible */
+  .subtle-texture-base {
+    background-image: 
+      /* Enhanced dots for visual continuity */ radial-gradient(
+        circle at 25% 25%,
+        rgba(30, 41, 59, 0.025) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(249, 115, 22, 0.018) 1px,
+        transparent 1px
+      ),
+      /* Visible micro grid for structure */
+        linear-gradient(rgba(30, 41, 59, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 41, 59, 0.015) 1px, transparent 1px),
+      /* Additional pattern layer */
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(249, 115, 22, 0.008) 2px,
+          transparent 2px
+        );
+    background-size: 120px 120px, 140px 140px, 60px 60px, 60px 60px, 200px 200px;
+    background-position: 0 0, 60px 60px, 0 0, 0 0, 100px 100px;
+  }
+
+  .subtle-texture-light {
+    background-image: radial-gradient(
+        circle at 30% 20%,
+        rgba(249, 115, 22, 0.022) 1.5px,
+        transparent 1.5px
+      ),
+      radial-gradient(
+        circle at 70% 80%,
+        rgba(30, 41, 59, 0.018) 1px,
+        transparent 1px
+      ),
+      linear-gradient(45deg, rgba(249, 115, 22, 0.008) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(30, 41, 59, 0.006) 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px, 160px 160px, 180px 180px;
+    background-position: 0 0, 40px 40px, 0 0, 80px 80px;
+  }
+
+  .subtle-texture-neutral {
+    background-image: radial-gradient(
+        circle at 40% 60%,
+        rgba(30, 41, 59, 0.02) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(249, 115, 22, 0.012) 0.8px,
+        transparent 0.8px
+      ),
+      linear-gradient(30deg, rgba(30, 41, 59, 0.008) 1px, transparent 1px),
+      linear-gradient(150deg, rgba(249, 115, 22, 0.008) 1px, transparent 1px);
+    background-size: 140px 140px, 100px 100px, 160px 160px, 200px 200px;
+    background-position: 0 0, 70px 70px, 80px 80px, 100px 100px;
+  }
+
+  /* Enhanced texture for interactive elements */
+  .subtle-texture-card {
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        rgba(249, 115, 22, 0.015) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(30, 41, 59, 0.012) 1px,
+        transparent 1px
+      ),
+      linear-gradient(45deg, rgba(30, 41, 59, 0.006) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(249, 115, 22, 0.004) 1px, transparent 1px);
+    background-size: 50px 50px, 70px 70px, 100px 100px, 120px 120px;
+    background-position: 0 0, 25px 25px, 0 0, 50px 50px;
+  }
+
+  /* Textura de pared blanca sutil y continua para todas las secciones */
+  .white-wall-texture {
+    background-image: 
+      /* Base de pared con variaciones tonales más pronunciadas */ linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(245, 248, 250, 0.4) 15%,
+        rgba(255, 255, 255, 0.5) 30%,
+        rgba(242, 245, 248, 0.35) 45%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(245, 248, 250, 0.4) 75%,
+        rgba(255, 255, 255, 0.5) 90%,
+        rgba(248, 250, 252, 0.3) 100%
+      ),
+      /* Textura de cemento/yeso más corrugada */
+        radial-gradient(
+          circle at 2px 2px,
+          rgba(220, 220, 220, 0.25) 1px,
+          transparent 0
+        ),
+      radial-gradient(
+        circle at 8px 12px,
+        rgba(235, 235, 235, 0.2) 1.5px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 18px 6px,
+        rgba(225, 225, 225, 0.18) 1px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 25px 20px,
+        rgba(240, 240, 240, 0.15) 2px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 35px 15px,
+        rgba(230, 230, 230, 0.12) 1px,
+        transparent 0
+      ),
+      /* Líneas de estructura de pared más visibles */
+        linear-gradient(90deg, rgba(210, 210, 210, 0.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(215, 215, 215, 0.06) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(205, 205, 205, 0.05) 1px, transparent 2px),
+      /* Variaciones de superficie corrugada */
+        linear-gradient(30deg, rgba(245, 245, 245, 0.04) 1px, transparent 3px),
+      linear-gradient(-30deg, rgba(240, 240, 240, 0.035) 1px, transparent 4px),
+      linear-gradient(60deg, rgba(235, 235, 235, 0.03) 1px, transparent 5px),
+      /* Patrones orgánicos de pared más texturizados */
+        radial-gradient(
+          ellipse at 40px 60px,
+          rgba(250, 250, 250, 0.025) 3px,
+          transparent 3px
+        ),
+      radial-gradient(
+        ellipse at 80px 30px,
+        rgba(245, 245, 245, 0.02) 2px,
+        transparent 2px
+      ),
+      /* Imperfecciones y rugosidad adicional */
+        radial-gradient(
+          circle at 15px 45px,
+          rgba(225, 225, 225, 0.15) 0.5px,
+          transparent 0.5px
+        ),
+      radial-gradient(
+        circle at 55px 25px,
+        rgba(235, 235, 235, 0.12) 0.5px,
+        transparent 0.5px
+      );
+    background-size: 100% 100%, 12px 12px, 20px 20px, 35px 35px, 45px 45px,
+      55px 55px, 70px 70px, 85px 85px, 110px 110px, 130px 130px, 150px 150px,
+      180px 180px, 220px 220px, 250px 250px, 30px 30px, 60px 60px;
+    background-position: 0 0, 0 0, 10px 8px, 20px 20px, 35px 15px, 50px 30px,
+      0 0, 40px 0, 0 0, 65px 45px, 90px 90px, 110px 60px, 60px 40px, 140px 80px,
+      15px 25px, 45px 55px;
+  }
+
+  /* Textura de pared blanca sutil para fondos oscuros */
+  .white-wall-texture-dark {
+    background-image: 
+      /* Base de pared con variaciones tonales más pronunciadas para fondos oscuros */ linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(248, 250, 252, 0.08) 15%,
+        rgba(255, 255, 255, 0.12) 30%,
+        rgba(245, 248, 250, 0.06) 45%,
+        rgba(255, 255, 255, 0.12) 60%,
+        rgba(248, 250, 252, 0.08) 75%,
+        rgba(255, 255, 255, 0.12) 90%,
+        rgba(250, 252, 254, 0.05) 100%
+      ),
+      /* Textura de cemento/yeso más corrugada para fondos oscuros */
+        radial-gradient(
+          circle at 2px 2px,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 0
+        ),
+      radial-gradient(
+        circle at 8px 12px,
+        rgba(255, 255, 255, 0.05) 1.5px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 18px 6px,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 25px 20px,
+        rgba(255, 255, 255, 0.035) 2px,
+        transparent 0
+      ),
+      radial-gradient(
+        circle at 35px 15px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 0
+      ),
+      /* Líneas de estructura de pared más visibles */
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(255, 255, 255, 0.015) 1px, transparent 2px),
+      /* Variaciones de superficie corrugada */
+        linear-gradient(30deg, rgba(255, 255, 255, 0.012) 1px, transparent 3px),
+      linear-gradient(-30deg, rgba(255, 255, 255, 0.01) 1px, transparent 4px),
+      /* Imperfecciones y rugosidad adicional */
+        radial-gradient(
+          circle at 15px 45px,
+          rgba(255, 255, 255, 0.025) 0.5px,
+          transparent 0.5px
+        ),
+      radial-gradient(
+        circle at 55px 25px,
+        rgba(255, 255, 255, 0.02) 0.5px,
+        transparent 0.5px
+      );
+    background-size: 100% 100%, 12px 12px, 20px 20px, 35px 35px, 45px 45px,
+      55px 55px, 70px 70px, 85px 85px, 110px 110px, 130px 130px, 150px 150px,
+      30px 30px, 60px 60px;
+    background-position: 0 0, 0 0, 10px 8px, 20px 20px, 35px 15px, 50px 30px,
+      0 0, 40px 0, 0 0, 65px 45px, 90px 90px, 15px 25px, 45px 55px;
+  }
+
+  /* Enhanced continuous border texture for seamless transitions */
+  .section-border-texture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(30, 41, 59, 0.08) 20%,
+      rgba(249, 115, 22, 0.06) 50%,
+      rgba(30, 41, 59, 0.08) 80%,
+      transparent
+    );
+    opacity: 0.6;
+  }
+
+  .section-border-texture::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(30, 41, 59, 0.08) 20%,
+      rgba(249, 115, 22, 0.06) 50%,
+      rgba(30, 41, 59, 0.08) 80%,
+      transparent
+    );
+    opacity: 0.6;
+  }
+
+  .tech-overlay {
+    position: relative;
+  }
+
+  .tech-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.025) 0%,
+      transparent 35%,
+      transparent 65%,
+      rgba(30, 41, 59, 0.025) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Enhanced overlay with moving colors for Hero and Services */
+  .tech-overlay-enhanced::before {
+    background: linear-gradient(
+      135deg,
+      rgba(228, 244, 252, 0.35) 0%,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 50%,
+      rgba(228, 244, 252, 0.25) 75%,
+      rgba(228, 244, 252, 0.2) 100%
+    );
+    animation: overlayShift 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes overlayShift {
+    0% {
+      background: linear-gradient(
+        135deg,
+        rgba(228, 244, 252, 0.35) 0%,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 50%,
+        rgba(228, 244, 252, 0.25) 75%,
+        rgba(228, 244, 252, 0.2) 100%
+      );
+    }
+    100% {
+      background: linear-gradient(
+        135deg,
+        rgba(228, 244, 252, 0.25) 0%,
+        transparent 25%,
+        rgba(228, 244, 252, 0.2) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        rgba(228, 244, 252, 0.15) 100%
+      );
+    }
+  }
+
+  .tech-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-shine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(228, 244, 252, 0.25),
+      rgba(228, 244, 252, 0.6),
+      rgba(255, 255, 255, 0.5),
+      rgba(228, 244, 252, 0.55),
+      rgba(228, 244, 252, 0.4),
+      transparent
+    );
+    transform: rotate(45deg);
+    animation: techShine 6s ease-in-out infinite;
+  }
+
+  @keyframes techShine {
+    0%,
+    100% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    50% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+
+  /* Enhanced shine effect specifically for service cards - 15% more subtle */
+  .tech-shine-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-shine-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(249, 115, 22, 0.1),
+      rgba(255, 255, 255, 0.15),
+      rgba(30, 41, 59, 0.07),
+      rgba(249, 115, 22, 0.05),
+      transparent
+    );
+    transform: rotate(45deg) translateX(-100%) translateY(-100%);
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+
+  .tech-shine-card:hover::after {
+    opacity: 0.85;
+    animation: cardShine 1.2s ease-out;
+  }
+
+  @keyframes cardShine {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+
+  /* Creative and subtle developer patterns */
+  .tech-pattern-dev {
+    background-image: 
+      /* Soft dots like stars in code space */ radial-gradient(
+        circle at 25% 25%,
+        rgba(249, 115, 22, 0.025) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(30, 41, 59, 0.02) 1px,
+        transparent 1px
+      ),
+      /* Subtle grid like IDE guides */
+        linear-gradient(rgba(249, 115, 22, 0.006) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 41, 59, 0.006) 1px, transparent 1px);
+    background-size: 100px 100px, 120px 120px, 80px 80px, 80px 80px;
+    background-position: 0 0, 50px 50px, 0 0, 0 0;
+  }
+
+  /* Subtle professional highlights */
+  .tech-highlight {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.02),
+      rgba(30, 41, 59, 0.02)
+    );
+    border: 1px solid rgba(249, 115, 22, 0.05);
+    border-radius: 12px;
+  }
+
+  .tech-highlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(249, 115, 22, 0.02) 50%,
+      transparent 52%
+    );
+    background-size: 60px 60px;
+    animation: techMove 25s linear infinite;
+  }
+
+  @keyframes techMove {
+    0% {
+      transform: translateX(-60px) translateY(-60px);
+    }
+    100% {
+      transform: translateX(60px) translateY(60px);
+    }
+  }
+
+  /* Subtle code-inspired accents */
+  .code-accent {
+    position: relative;
+  }
+
+  .code-accent::before {
+    content: "{ }";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-size: 8px;
+    color: rgba(249, 115, 22, 0.15);
+    font-weight: normal;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .code-accent:hover::before {
+    opacity: 1;
+  }
 }
 
 /* Improved image rendering */
@@ -182,4 +870,87 @@ img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   image-rendering: optimize-quality;
+}
+
+/* RGB Gamer Animations for Footer */
+@keyframes rgbShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rgbBorder {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes rgbGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3),
+      0 0 40px rgba(236, 72, 153, 0.2);
+  }
+  33% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3),
+      0 0 40px rgba(34, 211, 238, 0.2);
+  }
+  66% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+      0 0 40px rgba(147, 51, 234, 0.2);
+  }
+}
+
+/* Hero Title Gradient Animation */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hero Title Word Animation */
+@keyframes wordSlide {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  45%,
+  55% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wordSlide::before {
+  content: "Diseñamos";
+}
+
+@keyframes wordSlide::after {
+  content: "Creamos";
+}
+
+/* Cursor Blink Animation */
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }

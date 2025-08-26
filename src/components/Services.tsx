@@ -55,9 +55,15 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="pt-20 lg:pt-24 pb-8 lg:pb-12 bg-white relative"
+      className="pt-20 lg:pt-24 pb-8 lg:pb-12 bg-white white-wall-texture relative"
     >
-      <div className="container mx-auto container-padding">
+      {/* Tech accent elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 right-1/4 w-24 h-24 bg-gradient-to-br from-primary-100/60 to-transparent rounded-full blur-2xl"></div>
+        <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-secondary-100/60 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto container-padding relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="heading-2 mb-6">{t("services.title")}</h2>
           <p className="text-large max-w-3xl mx-auto">
@@ -74,9 +80,11 @@ export default function Services() {
             >
               {/* Subtle premium border effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col">
+              <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col tech-pattern-dots subtle-texture-card tech-shine-card">
+                {/* Tech overlay for cards */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-transparent to-secondary-50/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 {/* Centered icon */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 relative z-10">
                   <div className="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-all duration-300 mx-auto">
                     <span className="text-3xl text-secondary-700 group-hover:text-primary-700 transition-colors duration-300">
                       {service.icon}
@@ -85,7 +93,7 @@ export default function Services() {
                 </div>
 
                 {/* Centered title with fixed height */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 relative z-10">
                   <div className="h-24 flex items-center justify-center">
                     <h3 className="text-3xl font-bold text-secondary-900 group-hover:text-primary-700 transition-colors duration-300 leading-tight">
                       {t(service.titleKey)}
@@ -94,18 +102,18 @@ export default function Services() {
                 </div>
 
                 {/* Aligned price */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 relative z-10">
                   <div className="bg-secondary-900 text-white font-bold text-xl px-6 py-3 rounded-xl shadow-sm group-hover:bg-primary-600 transition-colors duration-300 inline-block">
                     {t(service.titleKey.replace("title", "price"))}
                   </div>
                 </div>
 
-                <p className="text-sm text-secondary-600 mb-6 flex-grow leading-relaxed">
+                <p className="text-sm text-secondary-600 mb-6 flex-grow leading-relaxed relative z-10">
                   {t(service.descriptionKey)}
                 </p>
 
                 {/* Clean features list */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2 mb-6 relative z-10">
                   {service.features.map((featureKey, featureIndex) => (
                     <div
                       key={featureIndex}
@@ -120,9 +128,9 @@ export default function Services() {
                 </div>
 
                 {/* Bottom-aligned CTA button */}
-                <div className="mt-auto">
+                <div className="mt-auto relative z-10">
                   <button className="w-full bg-secondary-900 text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-sm">
-                    Get Started
+                    {t("services.cta")}
                   </button>
                 </div>
               </div>

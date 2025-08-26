@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,64 +29,153 @@ export default function Contact() {
     });
   };
 
+  const faqItems = [
+    {
+      titleKey: "faq.payment.title",
+      contentKey: "faq.payment.text",
+    },
+    {
+      titleKey: "faq.time.title",
+      contentKey: "faq.time.text",
+    },
+    {
+      titleKey: "faq.cost.title",
+      contentKey: "faq.cost.text",
+    },
+    {
+      titleKey: "faq.benefits.title",
+      contentKey: "faq.benefits.text",
+    },
+    {
+      titleKey: "faq.warranty.title",
+      contentKey: "faq.warranty.text",
+    },
+    {
+      titleKey: "faq.maintenance.title",
+      contentKey: "faq.maintenance.text",
+    },
+  ];
+
+  const toggleFaq = (index: number) => {
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
+
   return (
-    <section id="contact" className="pt-12 lg:pt-16 pb-20 lg:pb-24 bg-white">
-      <div className="container mx-auto container-padding">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="heading-2 mb-6">{t("contact.title")}</h2>
+    <section
+      id="contact"
+      className="pt-8 lg:pt-12 pb-16 lg:pb-20 bg-white white-wall-texture relative"
+    >
+      {/* Tech accent elements */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-20 left-1/4 w-40 h-40 bg-gradient-to-br from-primary-100/70 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-tl from-secondary-100/70 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto container-padding relative z-10">
+        <div className="text-center mb-8 lg:mb-12 animate-fade-in">
+          <h2 className="heading-2 mb-3 lg:mb-4">{t("contact.title")}</h2>
           <p className="text-large max-w-3xl mx-auto">
             {t("contact.description")}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Enhanced Contact Information */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+          {/* FAQ Section */}
           <div className="animate-slide-up">
-            <h3 className="heading-3 mb-8">{t("contact.subtitle")}</h3>
-            <p className="text-body mb-12">{t("contact.intro")}</p>
+            <h3 className="heading-3 mb-4 lg:mb-6 text-primary-600">
+              {t("faq.title")}
+            </h3>
 
-            <div className="space-y-8">
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-primary-600 text-2xl">📧</span>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-secondary-900 mb-2">
-                    {t("contact.email.title")}
-                  </h4>
-                  <p className="text-body">{t("contact.email.text")}</p>
-                </div>
-              </div>
+            <div className="space-y-2 lg:space-y-3">
+              {faqItems.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`border border-secondary-200 rounded-lg lg:rounded-xl overflow-hidden bg-white/50 backdrop-blur-sm faq-card ${
+                    expandedFaq === index
+                      ? "faq-card-active border-primary-200 bg-white/80"
+                      : "hover:border-secondary-300"
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full px-4 py-2.5 lg:px-5 lg:py-3 text-left flex items-center justify-between hover:bg-primary-50/50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-200"
+                  >
+                    <span className="font-semibold text-secondary-900 flex items-center text-sm lg:text-base">
+                      <span className="text-primary-600 mr-2 lg:mr-3 text-base lg:text-lg">
+                        +
+                      </span>
+                      {t(faq.titleKey)}
+                    </span>
+                    <div
+                      className={`text-primary-600 text-lg lg:text-xl font-bold faq-icon ${
+                        expandedFaq === index ? "faq-icon-open" : ""
+                      }`}
+                    >
+                      +
+                    </div>
+                  </button>
 
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-primary-600 text-2xl">💬</span>
+                  {/* Contenido con transición ultra suave */}
+                  <div
+                    className={`border-t border-secondary-100 bg-gradient-to-b from-secondary-50/50 to-primary-50/30 faq-content ${
+                      expandedFaq === index ? "faq-content-open" : ""
+                    }`}
+                  >
+                    <div className="px-4 lg:px-5">
+                      <div
+                        className={`text-secondary-700 leading-relaxed text-sm lg:text-base faq-text ${
+                          expandedFaq === index ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        {t(faq.contentKey)
+                          .split("\n")
+                          .map((paragraph, pIndex) =>
+                            paragraph.trim() ? (
+                              <p
+                                key={pIndex}
+                                className={pIndex > 0 ? "mt-3" : ""}
+                              >
+                                {paragraph}
+                              </p>
+                            ) : null
+                          )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-secondary-900 mb-2">
-                    {t("contact.chat.title")}
-                  </h4>
-                  <p className="text-body">{t("contact.chat.text")}</p>
-                </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-primary-600 text-2xl">⚡</span>
+            {/* Contact Info Summary */}
+            <div className="mt-4 lg:mt-6 p-3 bg-gradient-to-br from-primary-50/50 to-secondary-50/30 rounded-lg lg:rounded-xl border border-primary-100">
+              <h4 className="font-bold text-secondary-900 mb-2 text-sm lg:text-base">
+                Información de Contacto
+              </h4>
+              <div className="space-y-1 lg:space-y-1.5">
+                <div className="flex items-center">
+                  <span className="text-primary-600 mr-2 text-xs lg:text-sm">
+                    📧
+                  </span>
+                  <span className="text-secondary-700 text-xs lg:text-sm">
+                    contacto@apolocode.com
+                  </span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-secondary-900 mb-2">
-                    {t("contact.response.title")}
-                  </h4>
-                  <p className="text-body">{t("contact.response.text")}</p>
+                <div className="flex items-center">
+                  <span className="text-primary-600 mr-2 text-xs lg:text-sm">
+                    ⚡
+                  </span>
+                  <span className="text-secondary-700 text-xs lg:text-sm">
+                    Respuesta en 24 horas
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Enhanced Contact Form */}
-          <div className="card p-10 animate-slide-up bg-gradient-to-br from-secondary-50 to-primary-50/30">
-            <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="card p-10 animate-slide-up bg-gradient-to-br from-secondary-50 to-primary-50/30 relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/30 rounded-2xl opacity-60"></div>
+            <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label

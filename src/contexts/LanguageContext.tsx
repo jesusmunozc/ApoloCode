@@ -19,9 +19,9 @@ const translations = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Professional",
-    "hero.title.highlight": "Web Development",
-    "hero.title.end": "Services",
+    "hero.title": "We Design",
+    "hero.title.highlight": "Custom Websites",
+    "hero.title.end": "For Your Business",
     "hero.description":
       "We create stunning, high-performance websites and web applications that help your business grow and succeed in the digital world.",
     "hero.cta.primary": "Start Your Project",
@@ -108,6 +108,27 @@ const translations = {
     "contact.response.title": "Quick Response",
     "contact.response.text": "We typically respond within 24 hours",
 
+    // FAQ
+    "faq.title": "Frequently Asked Questions",
+    "faq.payment.title": "Payment Method",
+    "faq.payment.text":
+      "50% is paid to start and the remaining 50% to finish.\n\nAdditional products are charged once the web is finalized and delivered.",
+    "faq.time.title": "How long does it take?",
+    "faq.time.text":
+      "Delivery time depends on the number of ongoing projects. However, the maximum deadline is 30 business days.\n\nIn many cases, delivery can be made in 7 to 14 business days, but in case of any unforeseen circumstances, we guarantee it will not exceed 30 business days.",
+    "faq.cost.title": "Cost for additional products uploads",
+    "faq.cost.text":
+      "Depending on the plan, uploading the first products is free and includes all detailed information to maximize visibility.\n\nIf you want to add additional products, the cost is $5 USD for the E-commerce plan and $3 USD for the Premium plan.\n\nThis additional cost applies only when you choose to have me upload additional products.",
+    "faq.benefits.title": "Benefits of uploading all your products",
+    "faq.benefits.text":
+      "Each product is optimized to the maximum to stand out on the web. This includes improving attributes and personalized descriptions (such as quantity, color, and key features), facilitating more precise and effective search.\n\nAdditionally, this process is done manually and optimized for SEO, ensuring better results and greater visibility in search engines.",
+    "faq.warranty.title": "What does the warranty cover?",
+    "faq.warranty.text":
+      "The warranty covers updating information on the web after delivery, without any problems or additional cost.",
+    "faq.maintenance.title": "Will my web have maintenance?",
+    "faq.maintenance.text":
+      "Maintenance is included for free during the first days, depending on the contracted plan.\n\nAfter that period, it has an additional cost, which is completely optional.",
+
     "contact.form.name": "Your Name",
     "contact.form.email": "Email Address",
     "contact.form.company": "Company (Optional)",
@@ -141,9 +162,9 @@ const translations = {
     "nav.contact": "Contacto",
 
     // Hero
-    "hero.title": "Servicios",
-    "hero.title.highlight": "Desarrollo Web",
-    "hero.title.end": "Profesionales",
+    "hero.title": "Diseñamos",
+    "hero.title.highlight": "tu sitio web personalizado",
+    "hero.title.end": "para tu negocio",
     "hero.description":
       "Creamos sitios web y aplicaciones web impresionantes y de alto rendimiento que ayudan a tu negocio a crecer y tener éxito en el mundo digital.",
     "hero.cta.primary": "Iniciar Tu Proyecto",
@@ -229,6 +250,27 @@ const translations = {
     "contact.chat.text": "Disponible para consultas y discusiones de proyectos",
     "contact.response.title": "Respuesta Rápida",
     "contact.response.text": "Normalmente respondemos dentro de 24 horas",
+
+    // FAQ
+    "faq.title": "Preguntas Frecuentes",
+    "faq.payment.title": "Modalidad de pago",
+    "faq.payment.text":
+      "Se paga el 50% al iniciar y el 50% restante al finalizar.\n\nLos productos adicionales se sube una vez finalizado y entregada la web.",
+    "faq.time.title": "¿Cuanto tiempo se demora?",
+    "faq.time.text":
+      "El tiempo de entrega depende de la cantidad de proyectos en curso. Sin embargo, el plazo máximo es de 30 días hábiles.\n\nEn muchos casos, la entrega puede realizarse en 7 a 14 días hábiles, pero ante cualquier imprevisto, garantizamos que no excederá los 30 días hábiles.",
+    "faq.cost.title": "Costo por subir productos adicionales",
+    "faq.cost.text":
+      "Dependiendo del plan, la subida de los primeros productos es gratuita e incluye toda la información detallada para maximizar su visibilidad.\n\nSi deseas agregar productos adicionales, el costo es de 5 USD en el plan E-commerce y 3 USD en el plan Premium.\n\nEste costo adicional es siempre y cuando elijas que yo te suba productos adicionales.",
+    "faq.benefits.title": "Beneficios de que suba todos tus productos",
+    "faq.benefits.text":
+      "Cada producto se optimiza al máximo para destacar en la web. Esto incluye la mejora de atributos y descripciones personalizadas (como cantidad, color y características clave), lo que facilita una búsqueda más precisa y efectiva.\n\nAdemás, este proceso se realiza de forma manual y optimizada para SEO, asegurando mejores resultados y mayor visibilidad en los buscadores.",
+    "faq.warranty.title": "¿Que cubre la garantía?",
+    "faq.warranty.text":
+      "La garantía cubre la actualización de información en la web después de la entrega, sin ningún problema ni costo adicional.",
+    "faq.maintenance.title": "¿Mi web tendrá mantenimiento?",
+    "faq.maintenance.text":
+      "El mantenimiento está incluido de forma gratuita durante los primeros días, según el plan contratado.\n\nDespués de ese período, tiene un costo adicional, que es completamente opcional.",
 
     "contact.form.name": "Tu Nombre",
     "contact.form.email": "Dirección de Email",
