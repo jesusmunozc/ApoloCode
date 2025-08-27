@@ -10,22 +10,23 @@ export default function Services() {
     const phoneNumber = "573137756939";
     // Clean the service title and create a simple message
     const cleanTitle = serviceTitle.trim();
-    
+
     // Create message based on selected language
-    const message = language === 'en' 
-      ? `Hello! I am interested in hiring the ${cleanTitle} service. Could you provide me with more information and a detailed quote?`
-      : `Hola! Estoy interesado en contratar el servicio de ${cleanTitle}. Podrias brindarme mas informacion y un presupuesto detallado?`;
-    
+    const message =
+      language === "en"
+        ? `Hello! I am interested in hiring the ${cleanTitle} service. Could you provide me with more information and a detailed quote?`
+        : `Hola! Estoy interesado en contratar el servicio de ${cleanTitle}. Podrias brindarme mas informacion y un presupuesto detallado?`;
+
     // Encode the message properly for URL
     const encodedMessage = encodeURIComponent(message);
-    
+
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
 
   // Function to handle WhatsApp click
   const handleWhatsAppClick = (serviceTitle: string) => {
     const whatsappUrl = generateWhatsAppLink(serviceTitle);
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
 
   const services = [
