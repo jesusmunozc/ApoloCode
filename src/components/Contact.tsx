@@ -103,7 +103,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.name")}
                   />
                 </div>
 
@@ -122,7 +121,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.email")}
                   />
                 </div>
               </div>
@@ -141,7 +139,6 @@ export default function Contact() {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                  placeholder={t("contact.form.placeholder.company")}
                 />
               </div>
 

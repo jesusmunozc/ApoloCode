@@ -3,7 +3,30 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // Function to generate WhatsApp link with custom message
+  const generateWhatsAppLink = (serviceTitle: string) => {
+    const phoneNumber = "573137756939";
+    // Clean the service title and create a simple message
+    const cleanTitle = serviceTitle.trim();
+    
+    // Create message based on selected language
+    const message = language === 'en' 
+      ? `Hello! I am interested in hiring the ${cleanTitle} service. Could you provide me with more information and a detailed quote?`
+      : `Hola! Estoy interesado en contratar el servicio de ${cleanTitle}. Podrias brindarme mas informacion y un presupuesto detallado?`;
+    
+    // Encode the message properly for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
+
+  // Function to handle WhatsApp click
+  const handleWhatsAppClick = (serviceTitle: string) => {
+    const whatsappUrl = generateWhatsAppLink(serviceTitle);
+    window.open(whatsappUrl, '_blank');
+  };
 
   const services = [
     {
@@ -142,7 +165,10 @@ export default function Services() {
 
                 {/* Bottom-aligned CTA button */}
                 <div className="mt-auto relative z-10">
-                  <button className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base">
+                  <button
+                    onClick={() => handleWhatsAppClick(t(service.titleKey))}
+                    className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base cursor-pointer"
+                  >
                     {t("services.cta")}
                   </button>
                 </div>
