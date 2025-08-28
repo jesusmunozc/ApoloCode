@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -27,8 +27,9 @@ export default function Contact() {
   });
 
   // Función para mostrar notificaciones
-  const showNotification = (type: "success" | "error", message: string) => {
-    setNotification({ type, message, show: true });
+  const showNotification = (type: "success" | "error", message: string | string[]) => {
+    const messageText = Array.isArray(message) ? message.join(' ') : message;
+    setNotification({ type, message: messageText, show: true });
 
     // Auto-ocultar después de 5 segundos
     setTimeout(() => {
@@ -229,7 +230,11 @@ export default function Contact() {
                   required
                   rows={4}
                   className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 resize-vertical bg-white/80 backdrop-blur-sm lg:rows-6"
-                  placeholder={t("contact.form.placeholder.message")}
+                  placeholder={typeof t("contact.form.placeholder.message") === 'string' 
+                    ? t("contact.form.placeholder.message") as string
+                    : Array.isArray(t("contact.form.placeholder.message")) 
+                      ? (t("contact.form.placeholder.message") as string[]).join(' ')
+                      : ''}
                 />
               </div>
 
@@ -237,10 +242,12 @@ export default function Contact() {
               <div className="flex justify-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
+                  key={language} /* Añadiendo key para forzar el re-render al cambiar idioma */
                   sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                   onChange={handleCaptchaChange}
                   theme="light"
                   size="normal"
+                  hl={language} /* 'es' for Spanish, 'en' for English */
                 />
               </div>
 
@@ -307,18 +314,22 @@ export default function Contact() {
                           expandedFaq === index ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        {t(faq.contentKey)
-                          .split("\n")
-                          .map((paragraph, pIndex) =>
-                            paragraph.trim() ? (
-                              <p
-                                key={pIndex}
-                                className={pIndex > 0 ? "mt-3" : ""}
-                              >
-                                {paragraph}
-                              </p>
-                            ) : null
-                          )}
+                        {(() => {
+                          const content = t(faq.contentKey);
+                          if (typeof content === 'string') {
+                            return content.split("\n").map((paragraph: string, pIndex: number) =>
+                              paragraph.trim() ? (
+                                <p
+                                  key={pIndex}
+                                  className={pIndex > 0 ? "mt-3" : ""}
+                                >
+                                  {paragraph}
+                                </p>
+                              ) : null
+                            );
+                          }
+                          return Array.isArray(content) ? content.join(' ') : content;
+                        })()}
                       </div>
                     </div>
                   </div>
@@ -329,7 +340,7 @@ export default function Contact() {
             {/* Contact Info Summary */}
             <div className="mt-4 lg:mt-6 p-3 bg-gradient-to-br from-primary-50/50 to-secondary-50/30 rounded-lg lg:rounded-xl border border-primary-100">
               <h4 className="font-bold text-secondary-900 mb-2 text-sm lg:text-base">
-                Información de Contacto
+                {t("contact.info.title")}
               </h4>
               <div className="space-y-1 lg:space-y-1.5">
                 <div className="flex items-center">
@@ -337,7 +348,7 @@ export default function Contact() {
                     📧
                   </span>
                   <span className="text-secondary-700 text-xs lg:text-sm">
-                    contacto@apolocode.com
+                    {t("contact.email.text")}
                   </span>
                 </div>
                 <div className="flex items-center">
@@ -345,7 +356,7 @@ export default function Contact() {
                     ⚡
                   </span>
                   <span className="text-secondary-700 text-xs lg:text-sm">
-                    Respuesta en 24 horas
+                    {t("contact.info.response")}
                   </span>
                 </div>
               </div>
@@ -407,8 +418,16 @@ export default function Contact() {
                   }`}
                 >
                   {notification.type === "success"
-                    ? t("contact.notification.success.title")
-                    : t("contact.notification.error.title")}
+                    ? typeof t("contact.notification.success.title") === 'string' 
+                      ? t("contact.notification.success.title") as string
+                      : Array.isArray(t("contact.notification.success.title"))
+                        ? (t("contact.notification.success.title") as string[]).join(' ')
+                        : ''
+                    : typeof t("contact.notification.error.title") === 'string'
+                      ? t("contact.notification.error.title") as string
+                      : Array.isArray(t("contact.notification.error.title"))
+                        ? (t("contact.notification.error.title") as string[]).join(' ')
+                        : ''}
                 </div>
                 <div
                   className={`text-sm ${

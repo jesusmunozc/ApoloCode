@@ -55,7 +55,8 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-20 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-20 bg-gradient-to-br from-secondary-50 via-white to-secondary-50 white-wall-texture tech-pattern-elegant subtle-texture-base tech-overlay tech-overlay-enhanced tech-shine overflow-hidden relative"
+      className="min-h-screen flex items-center pt-20 pb-8 sm:pt-32 sm:pb-12 lg:pt-24 lg:pb-20 bg-gradient-to-br from-secondary-50 via-white to-secondary-50 white-wall-texture tech-pattern-elegant subtle-texture-base tech-overlay tech-overlay-enhanced tech-shine overflow-hidden relative"
+   // className="min-h-screen flex items-center pt-28 pb-8 sm:pt-32 sm:pb-12 lg:pt-24 lg:pb-20 bg-gradient-to-br from-secondary-50 via-white to-secondary-50 white-wall-texture tech-pattern-elegant subtle-texture-base tech-overlay tech-overlay-enhanced tech-shine overflow-hidden relative"
     >
       {/* Subtle tech accents with enhanced blue effects */}
       <div className="absolute inset-0 opacity-30">
@@ -72,10 +73,10 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:container-padding relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-16 min-h-[70vh] sm:min-h-[75vh] lg:min-h-[70vh]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-12 min-h-[60vh] sm:min-h-[65vh] lg:min-h-[60vh]">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in order-1 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-2 sm:mb-3 lg:mb-4 relative px-2 sm:px-0">
               <span className="text-secondary-900 relative inline-block align-baseline">
                 <span className="inline-block align-baseline">
                   {displayedText}
@@ -91,23 +92,23 @@ export default function Hero() {
                   }`}
                 ></span>
               </span>
-              <span className="text-primary-600 block lg:inline relative">
+              <span className={`text-primary-600 ${language === 'en' ? 'inline-block lg:inline-block' : 'block lg:inline'} relative`}>
                 <span className="relative z-10">
                   {" "}
                   {t("hero.title.highlight")}
                 </span>
               </span>
-              <br className="hidden lg:block" />
-              <span className="block text-secondary-900">
+              {language === 'en' ? ' ' : <br className="hidden lg:block" />}
+              <span className={`${language === 'en' ? 'inline-block' : 'block'} text-secondary-900`}>
                 {t("hero.title.end")}
               </span>
             </h1>
-            <p className="text-sm sm:text-base lg:text-xl text-secondary-600 leading-relaxed mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0">
+            <p className="text-sm sm:text-base lg:text-lg text-secondary-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0">
               {t("hero.description")}
             </p>
 
             {/* Experience Statistics */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:flex lg:gap-8 justify-center lg:justify-start mb-6 lg:mb-8 px-1 sm:px-2 lg:px-0">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:flex lg:gap-6 justify-center lg:justify-start mb-4 lg:mb-6 px-1 sm:px-2 lg:px-0">
               <div className="text-center lg:text-left">
                 <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-primary-600 mb-0.5 lg:mb-1">
                   3+
@@ -138,13 +139,13 @@ export default function Hero() {
             <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full max-w-md sm:max-w-none mx-auto lg:mx-0">
               <a
                 href="#contact"
-                className="bg-secondary-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center"
+                className={`bg-secondary-900 text-white px-8 py-3 ${language === 'en' ? 'py-3' : 'py-4'} rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center`}
               >
                 {t("hero.cta.primary")}
               </a>
               <a
                 href="#portfolio"
-                className="border-2 border-secondary-900 text-secondary-900 px-8 py-4 rounded-lg font-semibold hover:bg-secondary-900 hover:text-white transition-colors duration-300 text-center"
+                className={`border-2 border-secondary-900 text-secondary-900 px-8 py-3 ${language === 'en' ? 'py-3' : 'py-4'} rounded-lg font-semibold hover:bg-secondary-900 hover:text-white transition-colors duration-300 text-center`}
               >
                 {t("hero.cta.secondary")}
               </a>
@@ -181,13 +182,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-sm sm:max-w-md">
               <a
                 href="#contact"
-                className="bg-secondary-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center text-sm sm:text-base"
+                className={`bg-secondary-900 text-white px-6 sm:px-8 py-3 sm:py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 text-center text-sm sm:text-base ${language === 'en' ? 'sm:py-3' : 'sm:py-4'}`}
               >
                 {t("hero.cta.primary")}
               </a>
               <a
                 href="#portfolio"
-                className="border-2 border-secondary-900 text-secondary-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-secondary-900 hover:text-white transition-colors duration-300 text-center text-sm sm:text-base"
+                className={`border-2 border-secondary-900 text-secondary-900 px-6 sm:px-8 py-3 sm:py-3 rounded-lg font-semibold hover:bg-secondary-900 hover:text-white transition-colors duration-300 text-center text-sm sm:text-base ${language === 'en' ? 'sm:py-3' : 'sm:py-4'}`}
               >
                 {t("hero.cta.secondary")}
               </a>
