@@ -3,12 +3,38 @@ import nodemailer from "nodemailer";
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, message } = await request.json();
+    const { name, email, company, message, captchaToken } =
+      await request.json();
 
     // Validar que los campos requeridos estén presentes
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Nombre, email y mensaje son requeridos" },
+        { status: 400 }
+      );
+    }
+
+    // Validar que el captcha esté presente
+    if (!captchaToken) {
+      return NextResponse.json(
+        { error: "El captcha es requerido" },
+        { status: 400 }
+      );
+    }
+
+    // Verificar el captcha con Google
+    const captchaResponse = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+      {
+        method: "POST",
+      }
+    );
+
+    const captchaData = await captchaResponse.json();
+
+    if (!captchaData.success) {
+      return NextResponse.json(
+        { error: "Verificación de captcha fallida" },
         { status: 400 }
       );
     }

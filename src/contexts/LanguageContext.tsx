@@ -149,6 +149,8 @@ const translations = {
     "contact.form.placeholder.company": "Your Company",
     "contact.form.placeholder.message":
       "Tell us about your project, requirements, timeline, and any specific features you need...",
+    "contact.form.captcha": "Please complete the security verification",
+    "contact.form.captcha.required": "Please complete the captcha verification",
     "contact.form.submit": "Send Message",
     "contact.form.sending": "Sending...",
     "contact.form.success":
@@ -309,6 +311,9 @@ const translations = {
     "contact.form.placeholder.company": "Tu Empresa",
     "contact.form.placeholder.message":
       "Cuéntanos sobre tu proyecto, requisitos, cronograma y cualquier característica específica que necesites...",
+    "contact.form.captcha": "Por favor completa la verificación de seguridad",
+    "contact.form.captcha.required":
+      "Por favor completa la verificación captcha",
     "contact.form.submit": "Enviar Mensaje",
     "contact.form.sending": "Enviando...",
     "contact.form.success": "¡Gracias por tu mensaje! Te responderemos pronto.",

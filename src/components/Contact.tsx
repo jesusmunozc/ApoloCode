@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const { t } = useLanguage();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [notification, setNotification] = useState<{
     type: "success" | "error" | null;
     message: string;
@@ -35,6 +38,13 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Verificar que el captcha esté completado
+    if (!captchaToken) {
+      showNotification("error", t("contact.form.captcha.required"));
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -43,7 +53,10 @@ export default function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
       });
 
       const result = await response.json();
@@ -56,6 +69,10 @@ export default function Contact() {
           company: "",
           message: "",
         });
+        setCaptchaToken(null);
+        if (recaptchaRef.current) {
+          recaptchaRef.current.reset();
+        }
         showNotification("success", t("contact.form.success"));
       } else {
         // Error del servidor
@@ -78,6 +95,10 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   const faqItems = [
@@ -212,11 +233,22 @@ export default function Contact() {
                 />
               </div>
 
+              {/* reCAPTCHA */}
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  onChange={handleCaptchaChange}
+                  theme="light"
+                  size="normal"
+                />
+              </div>
+
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !captchaToken}
                 className={`w-full py-3 lg:py-5 text-lg font-bold tracking-wide transition-all duration-300 rounded-lg ${
-                  isSubmitting
+                  isSubmitting || !captchaToken
                     ? "bg-gray-400 cursor-not-allowed"
                     : "btn-primary hover:bg-primary-700"
                 }`}
