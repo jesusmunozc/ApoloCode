@@ -171,8 +171,7 @@ const translations = {
     "footer.services.webapp": "Web Applications",
     "footer.services.maintenance": "Website Maintenance",
     "footer.links.title": "Quick Links",
-    "footer.copyright":
-      "© 2024 ApoloCode. All rights reserved. Built with passion for web development.",
+    "footer.copyright": "© 2024 ApoloCode. All rights reserved.",
   },
   es: {
     // Header
@@ -333,8 +332,7 @@ const translations = {
     "footer.services.webapp": "Aplicaciones Web",
     "footer.services.maintenance": "Mantenimiento Web",
     "footer.links.title": "Enlaces Rápidos",
-    "footer.copyright":
-      "© 2024 ApoloCode. Todos los derechos reservados. Construido con pasión por el desarrollo web.",
+    "footer.copyright": "© 2024 ApoloCode. Todos los derechos reservados.",
   },
 };
 
