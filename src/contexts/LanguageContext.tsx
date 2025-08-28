@@ -12,6 +12,8 @@ interface LanguageContextType {
 
 const translations = {
   en: {
+    // Language code
+    "language": "en",
     // Header
     "nav.home": "Home",
     "nav.services": "Services",
@@ -121,6 +123,8 @@ const translations = {
     "contact.chat.text": "Available for consultations and project discussions",
     "contact.response.title": "Quick Response",
     "contact.response.text": "We typically respond within 24 hours",
+    "contact.info.title": "Contact Information",
+    "contact.info.response": "Response within 24 hours",
 
     // FAQ
     "faq.title": "Frequently Asked Questions",
@@ -178,6 +182,8 @@ const translations = {
     "footer.copyright": "© 2024 ApoloCode. All rights reserved.",
   },
   es: {
+    // Language code
+    "language": "es",
     // Header
     "nav.home": "Inicio",
     "nav.services": "Servicios",
@@ -287,6 +293,8 @@ const translations = {
     "contact.chat.text": "Disponible para consultas y discusiones de proyectos",
     "contact.response.title": "Respuesta Rápida",
     "contact.response.text": "Normalmente respondemos dentro de 24 horas",
+    "contact.info.title": "Información de Contacto",
+    "contact.info.response": "Respuesta en 24 horas",
 
     // FAQ
     "faq.title": "Preguntas Frecuentes",

@@ -167,7 +167,15 @@ export default function Services() {
                 {/* Bottom-aligned CTA button */}
                 <div className="mt-auto relative z-10">
                   <button
-                    onClick={() => handleWhatsAppClick(t(service.titleKey))}
+                    onClick={() => {
+                      const titleValue = t(service.titleKey);
+                      const serviceTitle = typeof titleValue === 'string' 
+                        ? titleValue 
+                        : Array.isArray(titleValue) 
+                          ? titleValue.join(' ') 
+                          : '';
+                      handleWhatsAppClick(serviceTitle);
+                    }}
                     className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base cursor-pointer"
                   >
                     {t("services.cta")}
@@ -176,6 +184,15 @@ export default function Services() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Texto aclaratorio sobre los precios */}
+        <div className="mt-8 mb-12 text-center animate-fade-in">
+          <p className="text-sm md:text-base text-secondary-600 max-w-4xl mx-auto">
+            {language === "es" 
+              ? "Los valores mostrados corresponden a un pago único por el desarrollo del sitio web. Posteriormente, se pueden contratar planes de mantención mensual — opcionales pero altamente recomendables — para asegurar el correcto funcionamiento, seguridad y actualizaciones del sitio." 
+              : "The values shown correspond to a one-time payment for website development. Subsequently, monthly maintenance plans —optional but highly recommended — can be contracted to ensure the proper functioning, security, and updates of the site."}
+          </p>
         </div>
       </div>
 
