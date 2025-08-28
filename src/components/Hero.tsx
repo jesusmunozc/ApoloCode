@@ -5,12 +5,20 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
-  const words = ["Diseñamos", "Creamos"];
+  // Obtener las palabras del contexto de idioma
+  const words = Array.isArray(t("hero.words")) ? t("hero.words") as string[] : ["Diseñamos", "Creamos"];
+
+  // Reiniciar la animación cuando cambia el idioma
+  useEffect(() => {
+    setCurrentWordIndex(0);
+    setDisplayedText("");
+    setIsTyping(true);
+  }, [language]);
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
@@ -105,7 +113,7 @@ export default function Hero() {
                   3+
                 </div>
                 <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
-                  Años de experiencia
+                  {t("hero.stats.years")}
                 </div>
               </div>
               <div className="text-center lg:text-left">
@@ -113,7 +121,7 @@ export default function Hero() {
                   20+
                 </div>
                 <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
-                  Proyectos realizados
+                  {t("hero.stats.projects")}
                 </div>
               </div>
               <div className="text-center lg:text-left">
@@ -121,7 +129,7 @@ export default function Hero() {
                   100%
                 </div>
                 <div className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-tight">
-                  Clientes satisfechos
+                  {t("hero.stats.clients")}
                 </div>
               </div>
             </div>

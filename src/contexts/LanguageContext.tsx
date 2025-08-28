@@ -7,7 +7,7 @@ type Language = "en" | "es";
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | string[];
 }
 
 const translations = {
@@ -26,6 +26,10 @@ const translations = {
       "We create stunning, high-performance websites and web applications that help your business grow and succeed in the digital world.",
     "hero.cta.primary": "Start Your Project",
     "hero.cta.secondary": "View Our Work",
+    "hero.words": ["We Design", "We Create"],
+    "hero.stats.years": "Years of experience",
+    "hero.stats.projects": "Projects completed",
+    "hero.stats.clients": "Satisfied clients",
 
     // Services
     "services.title": "Our Services",
@@ -178,6 +182,10 @@ const translations = {
     "hero.description":
       "Creamos sitios web y aplicaciones web impresionantes y de alto rendimiento que ayudan a tu negocio a crecer y tener éxito en el mundo digital.",
     "hero.cta.primary": "Iniciar Tu Proyecto",
+    "hero.words": ["Diseñamos", "Creamos"],
+    "hero.stats.years": "Años de experiencia",
+    "hero.stats.projects": "Proyectos realizados",
+    "hero.stats.clients": "Clientes satisfechos",
     "hero.cta.secondary": "Ver Nuestro Trabajo",
 
     // Services
@@ -325,7 +333,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("es");
 
-  const t = (key: string): string => {
+  const t = (key: string): string | string[] => {
     return (
       translations[language][key as keyof (typeof translations)["en"]] || key
     );

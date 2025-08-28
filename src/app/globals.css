@@ -935,13 +935,7 @@ img {
   }
 }
 
-@keyframes wordSlide::before {
-  content: "Diseñamos";
-}
-
-@keyframes wordSlide::after {
-  content: "Creamos";
-}
+/* Eliminando keyframes incorrectos */
 
 /* Cursor Blink Animation */
 @keyframes cursorBlink {
