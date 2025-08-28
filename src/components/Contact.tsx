@@ -1,11 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const { t } = useLanguage();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [notification, setNotification] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+    show: boolean;
+  }>({
+    type: null,
+    message: "",
+    show: false,
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,11 +26,66 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Función para mostrar notificaciones
+  const showNotification = (type: "success" | "error", message: string) => {
+    setNotification({ type, message, show: true });
+
+    // Auto-ocultar después de 5 segundos
+    setTimeout(() => {
+      setNotification((prev) => ({ ...prev, show: false }));
+    }, 5000);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be implemented later
-    console.log("Form submitted:", formData);
-    alert(t("contact.form.success"));
+
+    // Verificar que el captcha esté completado
+    if (!captchaToken) {
+      showNotification("error", t("contact.form.captcha.required"));
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Éxito - limpiar formulario y mostrar mensaje
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+        setCaptchaToken(null);
+        if (recaptchaRef.current) {
+          recaptchaRef.current.reset();
+        }
+        showNotification("success", t("contact.form.success"));
+      } else {
+        // Error del servidor
+        showNotification("error", t("contact.form.error"));
+        console.error("Error:", result.error);
+      }
+    } catch (error) {
+      // Error de red o conexión
+      showNotification("error", t("contact.form.error"));
+      console.error("Error de red:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -27,6 +95,10 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   const faqItems = [
@@ -103,7 +175,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.name")}
                   />
                 </div>
 
@@ -122,7 +193,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                    placeholder={t("contact.form.placeholder.email")}
                   />
                 </div>
               </div>
@@ -141,7 +211,6 @@ export default function Contact() {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 lg:px-6 lg:py-4 border-2 border-secondary-200 rounded-xl focus-ring transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                  placeholder={t("contact.form.placeholder.company")}
                 />
               </div>
 
@@ -164,11 +233,29 @@ export default function Contact() {
                 />
               </div>
 
+              {/* reCAPTCHA */}
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  onChange={handleCaptchaChange}
+                  theme="light"
+                  size="normal"
+                />
+              </div>
+
               <button
                 type="submit"
-                className="w-full btn-primary py-3 lg:py-5 text-lg font-bold tracking-wide"
+                disabled={isSubmitting || !captchaToken}
+                className={`w-full py-3 lg:py-5 text-lg font-bold tracking-wide transition-all duration-300 rounded-lg ${
+                  isSubmitting || !captchaToken
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "btn-primary hover:bg-primary-700"
+                }`}
               >
-                {t("contact.form.submit")}
+                {isSubmitting
+                  ? t("contact.form.sending")
+                  : t("contact.form.submit")}
               </button>
             </form>
           </div>
@@ -266,6 +353,101 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {/* Notificación Profesional */}
+      {notification.show && (
+        <div
+          className={`fixed top-4 right-4 z-50 max-w-md w-full mx-4 transform transition-all duration-500 ease-in-out ${
+            notification.show
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+          }`}
+        >
+          <div
+            className={`rounded-xl shadow-2xl border-l-4 p-4 lg:p-6 backdrop-blur-sm ${
+              notification.type === "success"
+                ? "bg-green-50/95 border-green-500 text-green-800"
+                : "bg-red-50/95 border-red-500 text-red-800"
+            }`}
+          >
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                {notification.type === "success" ? (
+                  <svg
+                    className="w-6 h-6 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-6 h-6 text-red-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                )}
+              </div>
+              <div className="ml-3 flex-1">
+                <div
+                  className={`text-sm font-semibold mb-1 ${
+                    notification.type === "success"
+                      ? "text-green-800"
+                      : "text-red-800"
+                  }`}
+                >
+                  {notification.type === "success"
+                    ? t("contact.notification.success.title")
+                    : t("contact.notification.error.title")}
+                </div>
+                <div
+                  className={`text-sm ${
+                    notification.type === "success"
+                      ? "text-green-700"
+                      : "text-red-700"
+                  }`}
+                >
+                  {notification.message}
+                </div>
+              </div>
+              <div className="ml-4 flex-shrink-0">
+                <button
+                  onClick={() =>
+                    setNotification((prev) => ({ ...prev, show: false }))
+                  }
+                  className={`inline-flex text-sm font-medium rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                    notification.type === "success"
+                      ? "text-green-500 hover:bg-green-100 focus:ring-green-500"
+                      : "text-red-500 hover:bg-red-100 focus:ring-red-500"
+                  }`}
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

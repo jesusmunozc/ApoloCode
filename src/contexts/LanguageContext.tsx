@@ -141,8 +141,9 @@ const translations = {
       "The warranty covers updating information on the web after delivery, without any problems or additional cost.",
     "faq.maintenance.title": "Will my web have maintenance?",
     "faq.maintenance.text":
-      "Maintenance is included for free during the first days, depending on the contracted plan.\n\nAfter that period, it has an additional cost, which is completely optional.",
+      "Maintenance is included for free during the first days, depending on the contracted plan. After that period, it has an additional cost, which is completely optional.",
 
+    // Contact Form
     "contact.form.name": "Your Name",
     "contact.form.email": "Email Address",
     "contact.form.company": "Company (Optional)",
@@ -152,9 +153,18 @@ const translations = {
     "contact.form.placeholder.company": "Your Company",
     "contact.form.placeholder.message":
       "Tell us about your project, requirements, timeline, and any specific features you need...",
+    "contact.form.captcha": "Please complete the security verification",
+    "contact.form.captcha.required": "Please complete the captcha verification",
     "contact.form.submit": "Send Message",
+    "contact.form.sending": "Sending...",
     "contact.form.success":
       "Thank you for your message! We'll get back to you soon.",
+    "contact.form.error":
+      "There was an error sending your message. Please try again or contact us directly.",
+
+    // Notificaciones
+    "contact.notification.success.title": "Message Sent Successfully!",
+    "contact.notification.error.title": "Error Sending Message",
 
     // Footer
     "footer.description":
@@ -165,8 +175,7 @@ const translations = {
     "footer.services.webapp": "Web Applications",
     "footer.services.maintenance": "Website Maintenance",
     "footer.links.title": "Quick Links",
-    "footer.copyright":
-      "© 2024 ApoloCode. All rights reserved. Built with passion for web development.",
+    "footer.copyright": "© 2024 ApoloCode. All rights reserved.",
   },
   es: {
     // Header
@@ -309,8 +318,18 @@ const translations = {
     "contact.form.placeholder.company": "Tu Empresa",
     "contact.form.placeholder.message":
       "Cuéntanos sobre tu proyecto, requisitos, cronograma y cualquier característica específica que necesites...",
+    "contact.form.captcha": "Por favor completa la verificación de seguridad",
+    "contact.form.captcha.required":
+      "Por favor completa la verificación captcha",
     "contact.form.submit": "Enviar Mensaje",
+    "contact.form.sending": "Enviando...",
     "contact.form.success": "¡Gracias por tu mensaje! Te responderemos pronto.",
+    "contact.form.error":
+      "Hubo un error al enviar tu mensaje. Por favor intenta de nuevo o contáctanos directamente.",
+
+    // Notificaciones
+    "contact.notification.success.title": "¡Mensaje Enviado Exitosamente!",
+    "contact.notification.error.title": "Error al Enviar Mensaje",
 
     // Footer
     "footer.description":
@@ -321,8 +340,7 @@ const translations = {
     "footer.services.webapp": "Aplicaciones Web",
     "footer.services.maintenance": "Mantenimiento Web",
     "footer.links.title": "Enlaces Rápidos",
-    "footer.copyright":
-      "© 2024 ApoloCode. Todos los derechos reservados. Construido con pasión por el desarrollo web.",
+    "footer.copyright": "© 2024 ApoloCode. Todos los derechos reservados.",
   },
 };
 
