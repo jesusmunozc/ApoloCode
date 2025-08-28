@@ -13,7 +13,7 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Language code
-    "language": "en",
+    language: "en",
     // Header
     "nav.home": "Home",
     "nav.services": "Services",
@@ -25,7 +25,7 @@ const translations = {
     "hero.title.highlight": "your personalized website",
     "hero.title.end": "for your business",
     "hero.description":
-      "We create stunning, high-performance websites and web applications that help your business grow and succeed in the digital world.",
+      "Your website is your business card that never sleeps.\n\nWe create digital experiences, optimization, and custom automations to boost your brand while you focus on what you do best.",
     "hero.cta.primary": "Start Your Project",
     "hero.cta.secondary": "View Our Work",
     "hero.words": ["We Design", "We Create"],
@@ -79,11 +79,23 @@ const translations = {
     "services.maintenance.title": "Website Maintenance",
     "services.maintenance.description":
       "Ongoing support and maintenance to keep your website secure, updated, and performing at its best.",
-    "services.maintenance.price": "$60.000 COP/month",
+    "services.maintenance.price": "From $60.000 COP/month",
     "services.maintenance.feature1": "Security updates",
     "services.maintenance.feature2": "Performance monitoring",
     "services.maintenance.feature3": "Content updates",
     "services.maintenance.feature4": "Technical support",
+
+    // Optimization and Automation
+    "services.optimization.title": "Process Optimization & Automation",
+    "services.optimization.description":
+      "We streamline your business processes and implement smart automations to increase efficiency and reduce manual work.",
+    "services.optimization.price": "From $200.000 COP",
+    "services.optimization.feature1": "Workflow analysis and optimization",
+    "services.optimization.feature2": "Task automation systems",
+    "services.optimization.feature3": "Data integration and synchronization",
+    "services.optimization.feature4": "Custom business tools development",
+    "services.optimization.feature5": "API integrations",
+    "services.optimization.feature6": "Performance monitoring and reporting",
 
     // Portfolio
     "portfolio.title": "Our Portfolio",
@@ -183,7 +195,7 @@ const translations = {
   },
   es: {
     // Language code
-    "language": "es",
+    language: "es",
     // Header
     "nav.home": "Inicio",
     "nav.services": "Servicios",
@@ -195,7 +207,7 @@ const translations = {
     "hero.title.highlight": "tu sitio web personalizado",
     "hero.title.end": "para tu negocio",
     "hero.description":
-      "Creamos sitios web y aplicaciones web impresionantes y de alto rendimiento que ayudan a tu negocio a crecer y tener éxito en el mundo digital.",
+      "Tu sitio web es tu tarjeta de presentación que nunca duerme.\n\nCreamos experiencias digitales, optimización y automatizaciones a tu medida para impulsar tu marca mientras tú te enfocas en lo mejor que sabes hacer.",
     "hero.cta.primary": "Iniciar Tu Proyecto",
     "hero.words": ["Diseñamos", "Creamos"],
     "hero.stats.years": "Años de experiencia",
@@ -249,11 +261,25 @@ const translations = {
     "services.maintenance.title": "Mantenimiento de Sitios Web",
     "services.maintenance.description":
       "Soporte y mantenimiento continuo para mantener tu sitio web seguro, actualizado y funcionando de la mejor manera.",
-    "services.maintenance.price": "$60.000 COP/mes",
+    "services.maintenance.price": "Desde $60.000 COP/mes",
     "services.maintenance.feature1": "Actualizaciones de Seguridad",
     "services.maintenance.feature2": "Monitoreo de Rendimiento",
     "services.maintenance.feature3": "Actualizaciones de Contenido",
     "services.maintenance.feature4": "Soporte Técnico",
+
+    // Optimización y Automatización
+    "services.optimization.title": "Optimización y Automatización de Procesos",
+    "services.optimization.description":
+      "Optimizamos los procesos de tu negocio e implementamos automatizaciones inteligentes para aumentar la eficiencia y reducir el trabajo manual.",
+    "services.optimization.price": "Desde $200.000 COP",
+    "services.optimization.feature1":
+      "Análisis y optimización de flujos de trabajo",
+    "services.optimization.feature2": "Sistemas de automatización de tareas",
+    "services.optimization.feature3": "Integración y sincronización de datos",
+    "services.optimization.feature4":
+      "Desarrollo de herramientas empresariales personalizadas",
+    "services.optimization.feature5": "Integraciones de API",
+    "services.optimization.feature6": "Monitoreo de rendimiento y reportes",
 
     // Portfolio
     "portfolio.title": "Nuestro Portafolio",

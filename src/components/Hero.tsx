@@ -11,7 +11,9 @@ export default function Hero() {
   const [isTyping, setIsTyping] = useState(true);
 
   // Obtener las palabras del contexto de idioma
-  const words = Array.isArray(t("hero.words")) ? t("hero.words") as string[] : ["Diseñamos", "Creamos"];
+  const words = Array.isArray(t("hero.words"))
+    ? (t("hero.words") as string[])
+    : ["Diseñamos", "Creamos"];
 
   // Reiniciar la animación cuando cambia el idioma
   useEffect(() => {
@@ -102,7 +104,7 @@ export default function Hero() {
                 {t("hero.title.end")}
               </span>
             </h1>
-            <p className="text-sm sm:text-base lg:text-xl text-secondary-600 leading-relaxed mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0">
+            <p className="text-sm sm:text-base lg:text-xl text-secondary-600 leading-relaxed mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0 whitespace-pre-line">
               {t("hero.description")}
             </p>
 

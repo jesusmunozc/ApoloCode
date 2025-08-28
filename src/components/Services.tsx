@@ -77,6 +77,19 @@ export default function Services() {
       ],
     },
     {
+      titleKey: "services.optimization.title",
+      descriptionKey: "services.optimization.description",
+      icon: "⚡",
+      features: [
+        "services.optimization.feature1",
+        "services.optimization.feature2",
+        "services.optimization.feature3",
+        "services.optimization.feature4",
+        "services.optimization.feature5",
+        "services.optimization.feature6",
+      ],
+    },
+    {
       titleKey: "services.maintenance.title",
       descriptionKey: "services.maintenance.description",
       icon: "🛠️",
@@ -108,83 +121,178 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden animate-slide-up"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Subtle premium border effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col tech-pattern-dots subtle-texture-card tech-shine-card">
-                {/* Tech overlay for cards */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-transparent to-secondary-50/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                {/* Centered icon */}
-                <div className="text-center mb-6 relative z-10">
-                  <div className="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-all duration-300 mx-auto">
-                    <span className="text-3xl text-secondary-700 group-hover:text-primary-700 transition-colors duration-300">
-                      {service.icon}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Centered title with fixed height */}
-                <div className="text-center mb-6 relative z-10">
-                  <div className="h-24 flex items-center justify-center">
-                    <h3 className="text-3xl font-bold text-secondary-900 group-hover:text-primary-700 transition-colors duration-300 leading-tight">
-                      {t(service.titleKey)}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Aligned price */}
-                <div className="text-center mb-6 relative z-10">
-                  <div className="bg-secondary-900 text-white font-bold text-xl px-6 py-3 rounded-xl shadow-sm group-hover:bg-primary-600 transition-colors duration-300 inline-block">
-                    {t(service.titleKey.replace("title", "price"))}
-                  </div>
-                </div>
-
-                <p className="text-base text-secondary-600 mb-4 leading-relaxed relative z-10 text-center">
-                  {t(service.descriptionKey)}
-                </p>
-
-                {/* Clean features list - Start from top */}
-                <div className="space-y-2 mb-6 flex-grow relative z-10">
-                  {service.features.map((featureKey, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-center text-base"
-                    >
-                      <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3 flex-shrink-0"></div>
-                      <span className="text-secondary-700">
-                        {t(featureKey)}
+        {/* Primera fila: Página Informativa, Landing Page, Tienda Online */}
+        <div className="flex justify-center mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {services.slice(0, 3).map((service, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden animate-slide-up w-full"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Etiqueta "Más Contratado" solo para Landing Page (index 1) */}
+                {index === 1 && (
+                  <div className="absolute top-2 right-2 z-20">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-lg shadow-lg backdrop-blur-sm">
+                      <span className="text-sm font-semibold">
+                        {language === "en" ? "Most Hired" : "Más Contratado"}
                       </span>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
+                {/* Subtle premium border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col tech-pattern-dots subtle-texture-card tech-shine-card">
+                  {/* Tech overlay for cards */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-transparent to-secondary-50/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Centered icon */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-all duration-300 mx-auto">
+                      <span className="text-3xl text-secondary-700 group-hover:text-primary-700 transition-colors duration-300">
+                        {service.icon}
+                      </span>
+                    </div>
+                  </div>
 
-                {/* Bottom-aligned CTA button */}
-                <div className="mt-auto relative z-10">
-                  <button
-                    onClick={() => {
-                      const titleValue = t(service.titleKey);
-                      const serviceTitle =
-                        typeof titleValue === "string"
-                          ? titleValue
-                          : Array.isArray(titleValue)
-                          ? titleValue.join(" ")
-                          : "";
-                      handleWhatsAppClick(serviceTitle);
-                    }}
-                    className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base cursor-pointer"
-                  >
-                    {t("services.cta")}
-                  </button>
+                  {/* Centered title with fixed height */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="h-24 flex items-center justify-center">
+                      <h3 className="text-3xl font-bold text-secondary-900 group-hover:text-primary-700 transition-colors duration-300 leading-tight">
+                        {t(service.titleKey)}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Aligned price */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="bg-secondary-900 text-white font-bold text-xl px-6 py-3 rounded-xl shadow-sm group-hover:bg-primary-600 transition-colors duration-300 inline-block">
+                      {t(service.titleKey.replace("title", "price"))}
+                    </div>
+                  </div>
+
+                  <p className="text-base text-secondary-600 mb-4 leading-relaxed relative z-10 text-center">
+                    {t(service.descriptionKey)}
+                  </p>
+
+                  {/* Clean features list - Start from top */}
+                  <div className="space-y-2 mb-6 flex-grow relative z-10">
+                    {service.features.map((featureKey, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center text-base"
+                      >
+                        <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3 flex-shrink-0"></div>
+                        <span className="text-secondary-700">
+                          {t(featureKey)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom-aligned CTA button */}
+                  <div className="mt-auto relative z-10">
+                    <button
+                      onClick={() => {
+                        const titleValue = t(service.titleKey);
+                        const serviceTitle =
+                          typeof titleValue === "string"
+                            ? titleValue
+                            : Array.isArray(titleValue)
+                            ? titleValue.join(" ")
+                            : "";
+                        handleWhatsAppClick(serviceTitle);
+                      }}
+                      className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base cursor-pointer"
+                    >
+                      {t("services.cta")}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Segunda fila: Optimización y Mantenimiento - Centrados */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl">
+            {services.slice(3, 5).map((service, index) => (
+              <div
+                key={index + 3}
+                className="group relative overflow-hidden animate-slide-up w-full"
+                style={{ animationDelay: `${(index + 3) * 150}ms` }}
+              >
+                {/* Subtle premium border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white rounded-xl p-6 border border-secondary-200 shadow-soft group-hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col tech-pattern-dots subtle-texture-card tech-shine-card">
+                  {/* Tech overlay for cards */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-50/20 via-transparent to-secondary-50/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Centered icon */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-all duration-300 mx-auto">
+                      <span className="text-3xl text-secondary-700 group-hover:text-primary-700 transition-colors duration-300">
+                        {service.icon}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Centered title with fixed height */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="h-24 flex items-center justify-center">
+                      <h3 className="text-3xl font-bold text-secondary-900 group-hover:text-primary-700 transition-colors duration-300 leading-tight">
+                        {t(service.titleKey)}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Aligned price */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="bg-secondary-900 text-white font-bold text-xl px-6 py-3 rounded-xl shadow-sm group-hover:bg-primary-600 transition-colors duration-300 inline-block">
+                      {t(service.titleKey.replace("title", "price"))}
+                    </div>
+                  </div>
+
+                  <p className="text-base text-secondary-600 mb-4 leading-relaxed relative z-10 text-center">
+                    {t(service.descriptionKey)}
+                  </p>
+
+                  {/* Clean features list - Start from top */}
+                  <div className="space-y-2 mb-6 flex-grow relative z-10">
+                    {service.features.map((featureKey, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center text-base"
+                      >
+                        <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3 flex-shrink-0"></div>
+                        <span className="text-secondary-700">
+                          {t(featureKey)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom-aligned CTA button */}
+                  <div className="mt-auto relative z-10">
+                    <button
+                      onClick={() => {
+                        const titleValue = t(service.titleKey);
+                        const serviceTitle =
+                          typeof titleValue === "string"
+                            ? titleValue
+                            : Array.isArray(titleValue)
+                            ? titleValue.join(" ")
+                            : "";
+                        handleWhatsAppClick(serviceTitle);
+                      }}
+                      className="w-full bg-secondary-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 text-base cursor-pointer"
+                    >
+                      {t("services.cta")}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
