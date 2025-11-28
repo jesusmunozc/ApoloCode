@@ -17,6 +17,7 @@ const translations = {
     // Header
     "nav.home": "Home",
     "nav.services": "Services",
+    "nav.packages": "Packages",
     "nav.portfolio": "Portfolio",
     "nav.contact": "Contact",
 
@@ -41,7 +42,7 @@ const translations = {
 
     "services.web.title": "Landing Page",
     "services.web.description": "Website similar to this one",
-    "services.web.price": "$800.000 COP",
+    "services.web.price": "$250 USD",
     "services.web.feature1": "Unique design",
     "services.web.feature2": "Animations",
     "services.web.feature3": "Responsive design",
@@ -49,37 +50,36 @@ const translations = {
     "services.web.feature5": "Load optimization",
     "services.web.feature6": "Social media integration",
     "services.web.feature7": "Contact form",
-    "services.web.feature8": "Hosting and domain",
+    "services.web.feature8": "Hosting and domain configuration",
     "services.web.feature9": "60 days warranty and maintenance",
 
     "services.ecommerce.title": "Online Store",
     "services.ecommerce.description": "Better known as E-commerce",
-    "services.ecommerce.price": "$1.400.000 COP",
+    "services.ecommerce.price": "$500 USD",
     "services.ecommerce.feature1": "Personalized design",
     "services.ecommerce.feature2": "Responsive design",
-    "services.ecommerce.feature3": "Entry of 50 products",
-    "services.ecommerce.feature4": "SEO optimization for products",
-    "services.ecommerce.feature5": "Load optimization",
-    "services.ecommerce.feature6": "Social media integration",
-    "services.ecommerce.feature7": "Contact form",
-    "services.ecommerce.feature8": "Hosting and domain",
-    "services.ecommerce.feature9": "90 days warranty and maintenance",
+    "services.ecommerce.feature3": "SEO optimization for products",
+    "services.ecommerce.feature4": "Load optimization",
+    "services.ecommerce.feature5": "Social media integration",
+    "services.ecommerce.feature6": "Contact form",
+    "services.ecommerce.feature7": "Hosting and domain configuration",
+    "services.ecommerce.feature8": "90 days warranty and maintenance",
 
     "services.webapp.title": "Informational Website",
     "services.webapp.description": "About your business or service",
-    "services.webapp.price": "$400.000 COP",
+    "services.webapp.price": "$120 USD",
     "services.webapp.feature1": "Traditional and static design",
     "services.webapp.feature2": "Responsive design",
     "services.webapp.feature3": "Load optimization",
     "services.webapp.feature4": "Social media integration",
     "services.webapp.feature5": "Contact form",
-    "services.webapp.feature6": "Hosting and domain",
+    "services.webapp.feature6": "Hosting and domain configuration",
     "services.webapp.feature7": "30 days warranty and maintenance",
 
     "services.maintenance.title": "Website Maintenance",
     "services.maintenance.description":
       "Ongoing support and maintenance to keep your website secure, updated, and performing at its best.",
-    "services.maintenance.price": "From $60.000 COP/month",
+    "services.maintenance.price": "From $50 USD/month",
     "services.maintenance.feature1": "Security updates",
     "services.maintenance.feature2": "Performance monitoring",
     "services.maintenance.feature3": "Content updates",
@@ -89,13 +89,173 @@ const translations = {
     "services.optimization.title": "Process Optimization & Automation",
     "services.optimization.description":
       "We streamline your business processes and implement smart automations to increase efficiency and reduce manual work.",
-    "services.optimization.price": "From $200.000 COP",
+    "services.optimization.price": "From $50 USD",
     "services.optimization.feature1": "Workflow analysis and optimization",
     "services.optimization.feature2": "Task automation systems",
     "services.optimization.feature3": "Data integration and synchronization",
     "services.optimization.feature4": "Custom business tools development",
     "services.optimization.feature5": "API integrations",
     "services.optimization.feature6": "Performance monitoring and reporting",
+
+    // Packages
+    "packages.title": "Our Service Packages",
+    "packages.description":
+      "Explore our comprehensive packages designed to fit your business needs. From basic solutions to enterprise-level services.",
+    "packages.cta.title": "Ready to Get Started?",
+    "packages.cta.description":
+      "Contact us today and let's discuss which package is right for your project.",
+    "packages.cta.button": "Request a Quote",
+
+    // Web Development Packages
+    "packages.webdev.title": "WordPress + WooCommerce Development",
+    "packages.webdev.description": "Complete e-commerce solutions",
+
+    "packages.webdev.wordpress.basic.name": "Basic Package",
+    "packages.webdev.wordpress.basic.price": "$640 USD",
+    "packages.webdev.wordpress.basic.time": "Delivery: 7-10 business days",
+    "packages.webdev.wordpress.basic.feature1":
+      "WordPress + WooCommerce installation",
+    "packages.webdev.wordpress.basic.feature2": "Premium template included ($60)",
+    "packages.webdev.wordpress.basic.feature3": "Up to 20 products configured",
+    "packages.webdev.wordpress.basic.feature4":
+      "Payment gateway setup (1 option)",
+    "packages.webdev.wordpress.basic.feature5": "Basic SEO configuration",
+    "packages.webdev.wordpress.basic.feature6": "Responsive design",
+    "packages.webdev.wordpress.basic.feature7": "1 round of revisions",
+
+    "packages.webdev.wordpress.professional.name": "Professional Package",
+    "packages.webdev.wordpress.professional.price": "$1,200 USD",
+    "packages.webdev.wordpress.professional.time":
+      "Delivery: 14-18 business days",
+    "packages.webdev.wordpress.professional.feature1":
+      "Everything in Basic + Premium template ($100)",
+    "packages.webdev.wordpress.professional.feature2":
+      "Up to 50 products configured",
+    "packages.webdev.wordpress.professional.feature3":
+      "Multiple payment gateways (up to 3)",
+    "packages.webdev.wordpress.professional.feature4":
+      "Abandoned cart recovery",
+    "packages.webdev.wordpress.professional.feature5": "Blog setup (5 articles)",
+    "packages.webdev.wordpress.professional.feature6": "2 rounds of revisions",
+
+    "packages.webdev.wordpress.premium.name": "Premium Package",
+    "packages.webdev.wordpress.premium.price": "$2,240 USD",
+    "packages.webdev.wordpress.premium.time": "Delivery: 25-30 business days",
+    "packages.webdev.wordpress.premium.feature1":
+      "Everything in Professional + Custom template ($200)",
+    "packages.webdev.wordpress.premium.feature2":
+      "Up to 150 products configured",
+    "packages.webdev.wordpress.premium.feature3":
+      "Membership/subscription system",
+    "packages.webdev.wordpress.premium.feature4":
+      "Multi-language (up to 2 languages)",
+    "packages.webdev.wordpress.premium.feature5":
+      "Custom features (20 hours development)",
+    "packages.webdev.wordpress.premium.feature6": "1 month post-launch support",
+
+    // Shopify Packages
+    "packages.shopify.title": "Shopify Development",
+    "packages.shopify.description": "Fast and reliable Shopify stores",
+
+    "packages.shopify.basic.name": "Basic Package",
+    "packages.shopify.basic.price": "$560 USD",
+    "packages.shopify.basic.time": "Delivery: 5-7 business days",
+    "packages.shopify.basic.feature1": "Complete Shopify store setup",
+    "packages.shopify.basic.feature2": "Theme from Shopify Theme Store",
+    "packages.shopify.basic.feature3": "Up to 20 products configured",
+    "packages.shopify.basic.feature4": "Payment gateway configuration",
+    "packages.shopify.basic.feature5": "Google Analytics integration",
+
+    "packages.shopify.professional.name": "Professional Package",
+    "packages.shopify.professional.price": "$960 USD",
+    "packages.shopify.professional.time": "Delivery: 10-14 business days",
+    "packages.shopify.professional.feature1":
+      "Everything in Basic + Premium theme ($180-$350)",
+    "packages.shopify.professional.feature2": "Up to 50 products configured",
+    "packages.shopify.professional.feature3":
+      "Complementary apps integration (up to 5)",
+    "packages.shopify.professional.feature4": "Advanced theme customization",
+    "packages.shopify.professional.feature5": "SEO optimized + Blog",
+
+    "packages.shopify.premium.name": "Premium Package",
+    "packages.shopify.premium.price": "$1,760 USD",
+    "packages.shopify.premium.time": "Delivery: 20-25 business days",
+    "packages.shopify.premium.feature1":
+      "Everything in Professional + 150 products",
+    "packages.shopify.premium.feature2":
+      "Custom Liquid development (15 hours)",
+    "packages.shopify.premium.feature3": "External systems integration (API)",
+    "packages.shopify.premium.feature4": "Multi-language and multi-currency",
+    "packages.shopify.premium.feature5": "1 month post-launch support",
+
+    // Maintenance Packages
+    "packages.maintenance.title": "Maintenance & Support Plans",
+    "packages.maintenance.description": "Keep your site running smoothly",
+
+    "packages.maintenance.basic.name": "Basic Plan",
+    "packages.maintenance.basic.price": "$120 USD/month",
+    "packages.maintenance.basic.feature1": "Up to 3 hours of work per month",
+    "packages.maintenance.basic.feature2": "Plugin/theme updates",
+    "packages.maintenance.basic.feature3": "Weekly automatic backups",
+    "packages.maintenance.basic.feature4": "Uptime monitoring",
+    "packages.maintenance.basic.feature5": "Email support (48hr response)",
+
+    "packages.maintenance.professional.name": "Professional Plan",
+    "packages.maintenance.professional.price": "$240 USD/month",
+    "packages.maintenance.professional.feature1": "Up to 8 hours of work per month",
+    "packages.maintenance.professional.feature2": "Daily automatic backups",
+    "packages.maintenance.professional.feature3": "Monthly speed optimization",
+    "packages.maintenance.professional.feature4": "Up to 10 products/month",
+    "packages.maintenance.professional.feature5":
+      "Email & WhatsApp support (24hr response)",
+
+    "packages.maintenance.premium.name": "Premium Plan",
+    "packages.maintenance.premium.price": "$480 USD/month",
+    "packages.maintenance.premium.feature1": "Up to 16 hours of work per month",
+    "packages.maintenance.premium.feature2": "24/7 monitoring with alerts",
+    "packages.maintenance.premium.feature3": "Unlimited product updates",
+    "packages.maintenance.premium.feature4": "Priority support (4hr response)",
+    "packages.maintenance.premium.feature5": "A/B testing & conversion optimization",
+
+    "packages.maintenance.enterprise.name": "Enterprise Plan",
+    "packages.maintenance.enterprise.price": "$960 USD/month",
+    "packages.maintenance.enterprise.feature1": "Up to 40 hours of work per month",
+    "packages.maintenance.enterprise.feature2": "Dedicated account manager",
+    "packages.maintenance.enterprise.feature3": "24/7 emergency availability",
+    "packages.maintenance.enterprise.feature4": "Advanced security with dedicated firewall",
+
+    // SEO Packages
+    "packages.seo.title": "SEO Optimization",
+    "packages.seo.description": "Improve your search engine rankings",
+
+    "packages.seo.basic.name": "Basic SEO",
+    "packages.seo.basic.price": "$320 USD",
+    "packages.seo.basic.time": "Delivery: 3-5 business days",
+    "packages.seo.basic.feature1": "SEO plugin installation & configuration",
+    "packages.seo.basic.feature2": "Title & meta description optimization (10 pages)",
+    "packages.seo.basic.feature3": "XML sitemap configuration",
+    "packages.seo.basic.feature4": "Google Search Console integration",
+    "packages.seo.basic.feature5": "Basic image optimization (alt tags)",
+
+    "packages.seo.professional.name": "Professional SEO",
+    "packages.seo.professional.price": "$640 USD",
+    "packages.seo.professional.time": "Delivery: 7-10 business days",
+    "packages.seo.professional.feature1":
+      "Everything in Basic + Keyword research (20 keywords)",
+    "packages.seo.professional.feature2": "Complete on-page optimization (30 pages)",
+    "packages.seo.professional.feature3": "Basic schema markup",
+    "packages.seo.professional.feature4": "Internal linking strategy",
+    "packages.seo.professional.feature5": "3 months of monthly reviews",
+
+    "packages.seo.premium.name": "Premium SEO",
+    "packages.seo.premium.price": "$1,200 USD",
+    "packages.seo.premium.time": "Delivery: 14-18 business days",
+    "packages.seo.premium.feature1":
+      "Everything in Professional + Deep keyword research (50+)",
+    "packages.seo.premium.feature2": "Advanced schema markup",
+    "packages.seo.premium.feature3": "Core Web Vitals optimization",
+    "packages.seo.premium.feature4": "Link building strategy",
+    "packages.seo.premium.feature5": "6 months of monthly reports",
 
     // Portfolio
     "portfolio.title": "Our Portfolio",
@@ -199,6 +359,7 @@ const translations = {
     // Header
     "nav.home": "Inicio",
     "nav.services": "Servicios",
+    "nav.packages": "Paquetes",
     "nav.portfolio": "Portafolio",
     "nav.contact": "Contacto",
 
@@ -223,7 +384,7 @@ const translations = {
 
     "services.web.title": "Landing Page",
     "services.web.description": "Web similar a esta",
-    "services.web.price": "$800.000 COP",
+    "services.web.price": "$250 USD",
     "services.web.feature1": "Diseño único",
     "services.web.feature2": "Animaciones",
     "services.web.feature3": "Diseño Responsive",
@@ -231,37 +392,36 @@ const translations = {
     "services.web.feature5": "Optimización de carga",
     "services.web.feature6": "Integración con redes sociales",
     "services.web.feature7": "Formulario de contacto",
-    "services.web.feature8": "Hosting y dominio",
+    "services.web.feature8": "Configuración de hosting y dominio",
     "services.web.feature9": "60 Días de garantía y mantención",
 
     "services.ecommerce.title": "Tienda Online",
     "services.ecommerce.description": "Más conocida como E-commerce",
-    "services.ecommerce.price": "$1.400.000 COP",
+    "services.ecommerce.price": "$500 USD",
     "services.ecommerce.feature1": "Diseño Personalizado",
     "services.ecommerce.feature2": "Diseño Responsive",
-    "services.ecommerce.feature3": "Ingreso de 50 Producto",
-    "services.ecommerce.feature4": "Optimización de SEO para producto",
-    "services.ecommerce.feature5": "Optimización de carga",
-    "services.ecommerce.feature6": "Integración con redes sociales",
-    "services.ecommerce.feature7": "Formulario de contacto",
-    "services.ecommerce.feature8": "Hosting y dominio",
-    "services.ecommerce.feature9": "90 Días de garantía y mantención",
+    "services.ecommerce.feature3": "Optimización de SEO para producto",
+    "services.ecommerce.feature4": "Optimización de carga",
+    "services.ecommerce.feature5": "Integración con redes sociales",
+    "services.ecommerce.feature6": "Formulario de contacto",
+    "services.ecommerce.feature7": "Configuración de hosting y dominio",
+    "services.ecommerce.feature8": "90 Días de garantía y mantención",
 
     "services.webapp.title": "Página Informativa",
     "services.webapp.description": "Sobre tu negocio o servicio",
-    "services.webapp.price": "$400.000 COP",
+    "services.webapp.price": "$120 USD",
     "services.webapp.feature1": "Diseño tradicional y estático",
     "services.webapp.feature2": "Diseño Responsive",
     "services.webapp.feature3": "Optimización de carga",
     "services.webapp.feature4": "Integración con redes sociales",
     "services.webapp.feature5": "Formulario de contacto",
-    "services.webapp.feature6": "Hosting y dominio",
+    "services.webapp.feature6": "Configuración de hosting y dominio",
     "services.webapp.feature7": "30 Días de garantía y mantención",
 
     "services.maintenance.title": "Mantenimiento de Sitios Web",
     "services.maintenance.description":
       "Soporte y mantenimiento continuo para mantener tu sitio web seguro, actualizado y funcionando de la mejor manera.",
-    "services.maintenance.price": "Desde $60.000 COP/mes",
+    "services.maintenance.price": "Desde $50 USD/mes",
     "services.maintenance.feature1": "Actualizaciones de Seguridad",
     "services.maintenance.feature2": "Monitoreo de Rendimiento",
     "services.maintenance.feature3": "Actualizaciones de Contenido",
@@ -271,7 +431,7 @@ const translations = {
     "services.optimization.title": "Optimización y Automatización de Procesos",
     "services.optimization.description":
       "Optimizamos los procesos de tu negocio e implementamos automatizaciones inteligentes para aumentar la eficiencia y reducir el trabajo manual.",
-    "services.optimization.price": "Desde $200.000 COP",
+    "services.optimization.price": "Desde $50 USD",
     "services.optimization.feature1":
       "Análisis y optimización de flujos de trabajo",
     "services.optimization.feature2": "Sistemas de automatización de tareas",
@@ -280,6 +440,183 @@ const translations = {
       "Desarrollo de herramientas empresariales personalizadas",
     "services.optimization.feature5": "Integraciones de API",
     "services.optimization.feature6": "Monitoreo de rendimiento y reportes",
+
+    // Packages
+    "packages.title": "Nuestros Paquetes de Servicios",
+    "packages.description":
+      "Explora nuestros paquetes completos diseñados para adaptarse a las necesidades de tu negocio. Desde soluciones básicas hasta servicios de nivel empresarial.",
+    "packages.cta.title": "¿Listo para Comenzar?",
+    "packages.cta.description":
+      "Contáctanos hoy y hablemos sobre qué paquete es el adecuado para tu proyecto.",
+    "packages.cta.button": "Solicitar Cotización",
+
+    // Paquetes de Desarrollo Web
+    "packages.webdev.title": "Desarrollo WordPress + WooCommerce",
+    "packages.webdev.description": "Soluciones completas de e-commerce",
+
+    "packages.webdev.wordpress.basic.name": "Paquete Básico",
+    "packages.webdev.wordpress.basic.price": "$640 USD",
+    "packages.webdev.wordpress.basic.time": "Entrega: 7-10 días hábiles",
+    "packages.webdev.wordpress.basic.feature1":
+      "Instalación de WordPress + WooCommerce",
+    "packages.webdev.wordpress.basic.feature2":
+      "Template premium incluido ($60)",
+    "packages.webdev.wordpress.basic.feature3": "Hasta 20 productos configurados",
+    "packages.webdev.wordpress.basic.feature4":
+      "Configuración de pasarela de pago (1 opción)",
+    "packages.webdev.wordpress.basic.feature5": "Configuración básica de SEO",
+    "packages.webdev.wordpress.basic.feature6": "Diseño responsive",
+    "packages.webdev.wordpress.basic.feature7": "1 revisión de cambios",
+
+    "packages.webdev.wordpress.professional.name": "Paquete Profesional",
+    "packages.webdev.wordpress.professional.price": "$1,200 USD",
+    "packages.webdev.wordpress.professional.time":
+      "Entrega: 14-18 días hábiles",
+    "packages.webdev.wordpress.professional.feature1":
+      "Todo lo del Básico + Template premium ($100)",
+    "packages.webdev.wordpress.professional.feature2":
+      "Hasta 50 productos configurados",
+    "packages.webdev.wordpress.professional.feature3":
+      "Múltiples pasarelas de pago (hasta 3)",
+    "packages.webdev.wordpress.professional.feature4":
+      "Recuperación de carrito abandonado",
+    "packages.webdev.wordpress.professional.feature5":
+      "Blog configurado (5 artículos)",
+    "packages.webdev.wordpress.professional.feature6": "2 revisiones de cambios",
+
+    "packages.webdev.wordpress.premium.name": "Paquete Premium",
+    "packages.webdev.wordpress.premium.price": "$2,240 USD",
+    "packages.webdev.wordpress.premium.time": "Entrega: 25-30 días hábiles",
+    "packages.webdev.wordpress.premium.feature1":
+      "Todo lo del Profesional + Template custom ($200)",
+    "packages.webdev.wordpress.premium.feature2":
+      "Hasta 150 productos configurados",
+    "packages.webdev.wordpress.premium.feature3":
+      "Sistema de membresías/suscripciones",
+    "packages.webdev.wordpress.premium.feature4":
+      "Multi-idioma (hasta 2 idiomas)",
+    "packages.webdev.wordpress.premium.feature5":
+      "Funcionalidades custom (20 horas desarrollo)",
+    "packages.webdev.wordpress.premium.feature6":
+      "1 mes de soporte post-lanzamiento",
+
+    // Paquetes Shopify
+    "packages.shopify.title": "Desarrollo Shopify",
+    "packages.shopify.description": "Tiendas Shopify rápidas y confiables",
+
+    "packages.shopify.basic.name": "Paquete Básico",
+    "packages.shopify.basic.price": "$560 USD",
+    "packages.shopify.basic.time": "Entrega: 5-7 días hábiles",
+    "packages.shopify.basic.feature1": "Configuración completa de tienda Shopify",
+    "packages.shopify.basic.feature2": "Theme de Shopify Theme Store",
+    "packages.shopify.basic.feature3": "Hasta 20 productos configurados",
+    "packages.shopify.basic.feature4": "Configuración de pasarela de pago",
+    "packages.shopify.basic.feature5": "Integración con Google Analytics",
+
+    "packages.shopify.professional.name": "Paquete Profesional",
+    "packages.shopify.professional.price": "$960 USD",
+    "packages.shopify.professional.time": "Entrega: 10-14 días hábiles",
+    "packages.shopify.professional.feature1":
+      "Todo lo del Básico + Theme premium ($180-$350)",
+    "packages.shopify.professional.feature2": "Hasta 50 productos configurados",
+    "packages.shopify.professional.feature3":
+      "Integración de apps complementarias (hasta 5)",
+    "packages.shopify.professional.feature4":
+      "Personalización avanzada del tema",
+    "packages.shopify.professional.feature5": "SEO optimizado + Blog",
+
+    "packages.shopify.premium.name": "Paquete Premium",
+    "packages.shopify.premium.price": "$1,760 USD",
+    "packages.shopify.premium.time": "Entrega: 20-25 días hábiles",
+    "packages.shopify.premium.feature1":
+      "Todo lo del Profesional + 150 productos",
+    "packages.shopify.premium.feature2":
+      "Desarrollo custom con Liquid (15 horas)",
+    "packages.shopify.premium.feature3":
+      "Integración con sistemas externos (API)",
+    "packages.shopify.premium.feature4": "Multi-idioma y multi-moneda",
+    "packages.shopify.premium.feature5": "1 mes de soporte post-lanzamiento",
+
+    // Paquetes de Mantenimiento
+    "packages.maintenance.title": "Planes de Mantenimiento y Soporte",
+    "packages.maintenance.description": "Mantén tu sitio funcionando sin problemas",
+
+    "packages.maintenance.basic.name": "Plan Básico",
+    "packages.maintenance.basic.price": "$120 USD/mes",
+    "packages.maintenance.basic.feature1": "Hasta 3 horas de trabajo al mes",
+    "packages.maintenance.basic.feature2": "Actualizaciones de plugins/temas",
+    "packages.maintenance.basic.feature3": "Backups automáticos semanales",
+    "packages.maintenance.basic.feature4": "Monitoreo de uptime",
+    "packages.maintenance.basic.feature5":
+      "Soporte por email (respuesta en 48hrs)",
+
+    "packages.maintenance.professional.name": "Plan Profesional",
+    "packages.maintenance.professional.price": "$240 USD/mes",
+    "packages.maintenance.professional.feature1":
+      "Hasta 8 horas de trabajo al mes",
+    "packages.maintenance.professional.feature2": "Backups automáticos diarios",
+    "packages.maintenance.professional.feature3":
+      "Optimización mensual de velocidad",
+    "packages.maintenance.professional.feature4": "Hasta 10 productos/mes",
+    "packages.maintenance.professional.feature5":
+      "Soporte por email y WhatsApp (respuesta en 24hrs)",
+
+    "packages.maintenance.premium.name": "Plan Premium",
+    "packages.maintenance.premium.price": "$480 USD/mes",
+    "packages.maintenance.premium.feature1": "Hasta 16 horas de trabajo al mes",
+    "packages.maintenance.premium.feature2": "Monitoreo 24/7 con alertas",
+    "packages.maintenance.premium.feature3":
+      "Actualizaciones ilimitadas de productos",
+    "packages.maintenance.premium.feature4":
+      "Soporte prioritario (respuesta en 4hrs)",
+    "packages.maintenance.premium.feature5":
+      "A/B testing y optimización de conversión",
+
+    "packages.maintenance.enterprise.name": "Plan Enterprise",
+    "packages.maintenance.enterprise.price": "$960 USD/mes",
+    "packages.maintenance.enterprise.feature1":
+      "Hasta 40 horas de trabajo al mes",
+    "packages.maintenance.enterprise.feature2": "Gestor de cuenta dedicado",
+    "packages.maintenance.enterprise.feature3":
+      "Disponibilidad 24/7 para emergencias",
+    "packages.maintenance.enterprise.feature4":
+      "Seguridad avanzada con firewall dedicado",
+
+    // Paquetes SEO
+    "packages.seo.title": "Optimización SEO",
+    "packages.seo.description": "Mejora tu posicionamiento en buscadores",
+
+    "packages.seo.basic.name": "SEO Básico",
+    "packages.seo.basic.price": "$320 USD",
+    "packages.seo.basic.time": "Entrega: 3-5 días hábiles",
+    "packages.seo.basic.feature1":
+      "Instalación y configuración de plugin SEO",
+    "packages.seo.basic.feature2":
+      "Optimización de títulos y meta descripciones (10 páginas)",
+    "packages.seo.basic.feature3": "Configuración de sitemap XML",
+    "packages.seo.basic.feature4": "Integración con Google Search Console",
+    "packages.seo.basic.feature5": "Optimización básica de imágenes (alt tags)",
+
+    "packages.seo.professional.name": "SEO Profesional",
+    "packages.seo.professional.price": "$640 USD",
+    "packages.seo.professional.time": "Entrega: 7-10 días hábiles",
+    "packages.seo.professional.feature1":
+      "Todo lo del Básico + Research de keywords (20 palabras clave)",
+    "packages.seo.professional.feature2":
+      "Optimización on-page completa (30 páginas)",
+    "packages.seo.professional.feature3": "Schema markup básico",
+    "packages.seo.professional.feature4": "Estrategia de internal linking",
+    "packages.seo.professional.feature5": "3 meses de revisiones mensuales",
+
+    "packages.seo.premium.name": "SEO Premium",
+    "packages.seo.premium.price": "$1,200 USD",
+    "packages.seo.premium.time": "Entrega: 14-18 días hábiles",
+    "packages.seo.premium.feature1":
+      "Todo lo del Profesional + Research profundo (50+ keywords)",
+    "packages.seo.premium.feature2": "Schema markup avanzado",
+    "packages.seo.premium.feature3": "Optimización de Core Web Vitals",
+    "packages.seo.premium.feature4": "Estrategia de link building",
+    "packages.seo.premium.feature5": "6 meses de reportes mensuales",
 
     // Portfolio
     "portfolio.title": "Nuestro Portafolio",
@@ -314,7 +651,7 @@ const translations = {
       "Estamos aquí para ayudarte a construir soluciones web increíbles. Ya sea que necesites un sitio web simple o una aplicación web compleja, nuestro equipo está listo para hacerlo realidad.",
 
     "contact.email.title": "Envíanos un Email",
-    "contact.email.text": "contacto@apolocode.com",
+    "contact.email.text": "apolocodeagency@gmail.com",
     "contact.chat.title": "Hablemos",
     "contact.chat.text": "Disponible para consultas y discusiones de proyectos",
     "contact.response.title": "Respuesta Rápida",

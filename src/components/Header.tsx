@@ -39,6 +39,12 @@ export default function Header() {
               {t("nav.services")}
             </a>
             <a
+              href="#packages"
+              className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
+            >
+              {t("nav.packages")}
+            </a>
+            <a
               href="#portfolio"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
@@ -94,6 +100,12 @@ export default function Header() {
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
               >
                 {t("nav.services")}
+              </a>
+              <a
+                href="#packages"
+                className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+              >
+                {t("nav.packages")}
               </a>
               <a
                 href="#portfolio"

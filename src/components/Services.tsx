@@ -73,7 +73,6 @@ export default function Services() {
         "services.ecommerce.feature6",
         "services.ecommerce.feature7",
         "services.ecommerce.feature8",
-        "services.ecommerce.feature9",
       ],
     },
     {
