@@ -455,7 +455,7 @@ const translations = {
     "packages.webdev.description": "Soluciones completas de e-commerce",
 
     "packages.webdev.wordpress.basic.name": "Paquete Básico",
-    "packages.webdev.wordpress.basic.price": "$640 USD",
+    "packages.webdev.wordpress.basic.price": "$520 USD",
     "packages.webdev.wordpress.basic.time": "Entrega: 7-10 días hábiles",
     "packages.webdev.wordpress.basic.feature1":
       "Instalación de WordPress + WooCommerce",
@@ -469,7 +469,7 @@ const translations = {
     "packages.webdev.wordpress.basic.feature7": "1 revisión de cambios",
 
     "packages.webdev.wordpress.professional.name": "Paquete Profesional",
-    "packages.webdev.wordpress.professional.price": "$1,200 USD",
+    "packages.webdev.wordpress.professional.price": "$910 USD",
     "packages.webdev.wordpress.professional.time":
       "Entrega: 14-18 días hábiles",
     "packages.webdev.wordpress.professional.feature1":
@@ -485,7 +485,7 @@ const translations = {
     "packages.webdev.wordpress.professional.feature6": "2 revisiones de cambios",
 
     "packages.webdev.wordpress.premium.name": "Paquete Premium",
-    "packages.webdev.wordpress.premium.price": "$2,240 USD",
+    "packages.webdev.wordpress.premium.price": "$1,900 USD",
     "packages.webdev.wordpress.premium.time": "Entrega: 25-30 días hábiles",
     "packages.webdev.wordpress.premium.feature1":
       "Todo lo del Profesional + Template custom ($200)",
@@ -505,7 +505,7 @@ const translations = {
     "packages.shopify.description": "Tiendas Shopify rápidas y confiables",
 
     "packages.shopify.basic.name": "Paquete Básico",
-    "packages.shopify.basic.price": "$560 USD",
+    "packages.shopify.basic.price": "$460 USD",
     "packages.shopify.basic.time": "Entrega: 5-7 días hábiles",
     "packages.shopify.basic.feature1": "Configuración completa de tienda Shopify",
     "packages.shopify.basic.feature2": "Theme de Shopify Theme Store",
@@ -514,7 +514,7 @@ const translations = {
     "packages.shopify.basic.feature5": "Integración con Google Analytics",
 
     "packages.shopify.professional.name": "Paquete Profesional",
-    "packages.shopify.professional.price": "$960 USD",
+    "packages.shopify.professional.price": "$860 USD",
     "packages.shopify.professional.time": "Entrega: 10-14 días hábiles",
     "packages.shopify.professional.feature1":
       "Todo lo del Básico + Theme premium ($180-$350)",
@@ -526,7 +526,7 @@ const translations = {
     "packages.shopify.professional.feature5": "SEO optimizado + Blog",
 
     "packages.shopify.premium.name": "Paquete Premium",
-    "packages.shopify.premium.price": "$1,760 USD",
+    "packages.shopify.premium.price": "$1,420 USD",
     "packages.shopify.premium.time": "Entrega: 20-25 días hábiles",
     "packages.shopify.premium.feature1":
       "Todo lo del Profesional + 150 productos",
@@ -543,32 +543,32 @@ const translations = {
 
     "packages.maintenance.basic.name": "Plan Básico",
     "packages.maintenance.basic.price": "$120 USD/mes",
-    "packages.maintenance.basic.feature1": "Hasta 3 horas de trabajo al mes",
+    "packages.maintenance.basic.feature1": "Hasta 6 horas de trabajo al mes",
     "packages.maintenance.basic.feature2": "Actualizaciones de plugins/temas",
     "packages.maintenance.basic.feature3": "Backups automáticos semanales",
     "packages.maintenance.basic.feature4": "Monitoreo de uptime",
     "packages.maintenance.basic.feature5":
-      "Soporte por email (respuesta en 48hrs)",
+      "Soporte por email (respuesta en max 12hrs)",
 
     "packages.maintenance.professional.name": "Plan Profesional",
     "packages.maintenance.professional.price": "$240 USD/mes",
     "packages.maintenance.professional.feature1":
-      "Hasta 8 horas de trabajo al mes",
+      "Hasta 12 horas de trabajo al mes",
     "packages.maintenance.professional.feature2": "Backups automáticos diarios",
     "packages.maintenance.professional.feature3":
       "Optimización mensual de velocidad",
     "packages.maintenance.professional.feature4": "Hasta 10 productos/mes",
     "packages.maintenance.professional.feature5":
-      "Soporte por email y WhatsApp (respuesta en 24hrs)",
+      "Soporte por email y WhatsApp (respuesta en max 6hrs)",
 
     "packages.maintenance.premium.name": "Plan Premium",
     "packages.maintenance.premium.price": "$480 USD/mes",
-    "packages.maintenance.premium.feature1": "Hasta 16 horas de trabajo al mes",
+    "packages.maintenance.premium.feature1": "Hasta 18 horas de trabajo al mes",
     "packages.maintenance.premium.feature2": "Monitoreo 24/7 con alertas",
     "packages.maintenance.premium.feature3":
       "Actualizaciones ilimitadas de productos",
     "packages.maintenance.premium.feature4":
-      "Soporte prioritario (respuesta en 4hrs)",
+      "Soporte prioritario (respuesta en 2hrs)",
     "packages.maintenance.premium.feature5":
       "A/B testing y optimización de conversión",
 
