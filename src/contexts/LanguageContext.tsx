@@ -111,7 +111,7 @@ const translations = {
     "packages.webdev.description": "Complete e-commerce solutions",
 
     "packages.webdev.wordpress.basic.name": "Basic Package",
-    "packages.webdev.wordpress.basic.price": "$640 USD",
+    "packages.webdev.wordpress.basic.price": "$310 USD",
     "packages.webdev.wordpress.basic.time": "Delivery: 7-10 business days",
     "packages.webdev.wordpress.basic.feature1":
       "WordPress + WooCommerce installation",
@@ -124,7 +124,7 @@ const translations = {
     "packages.webdev.wordpress.basic.feature7": "1 round of revisions",
 
     "packages.webdev.wordpress.professional.name": "Professional Package",
-    "packages.webdev.wordpress.professional.price": "$1,200 USD",
+    "packages.webdev.wordpress.professional.price": "$740 USD",
     "packages.webdev.wordpress.professional.time":
       "Delivery: 14-18 business days",
     "packages.webdev.wordpress.professional.feature1":
@@ -139,7 +139,7 @@ const translations = {
     "packages.webdev.wordpress.professional.feature6": "2 rounds of revisions",
 
     "packages.webdev.wordpress.premium.name": "Premium Package",
-    "packages.webdev.wordpress.premium.price": "$2,240 USD",
+    "packages.webdev.wordpress.premium.price": "$1,150 USD",
     "packages.webdev.wordpress.premium.time": "Delivery: 25-30 business days",
     "packages.webdev.wordpress.premium.feature1":
       "Everything in Professional + Custom template ($200)",
@@ -158,7 +158,7 @@ const translations = {
     "packages.shopify.description": "Fast and reliable Shopify stores",
 
     "packages.shopify.basic.name": "Basic Package",
-    "packages.shopify.basic.price": "$560 USD",
+    "packages.shopify.basic.price": "$210 USD",
     "packages.shopify.basic.time": "Delivery: 5-7 business days",
     "packages.shopify.basic.feature1": "Complete Shopify store setup",
     "packages.shopify.basic.feature2": "Theme from Shopify Theme Store",
@@ -167,7 +167,7 @@ const translations = {
     "packages.shopify.basic.feature5": "Google Analytics integration",
 
     "packages.shopify.professional.name": "Professional Package",
-    "packages.shopify.professional.price": "$960 USD",
+    "packages.shopify.professional.price": "$450 USD",
     "packages.shopify.professional.time": "Delivery: 10-14 business days",
     "packages.shopify.professional.feature1":
       "Everything in Basic + Premium theme ($180-$350)",
@@ -178,7 +178,7 @@ const translations = {
     "packages.shopify.professional.feature5": "SEO optimized + Blog",
 
     "packages.shopify.premium.name": "Premium Package",
-    "packages.shopify.premium.price": "$1,760 USD",
+    "packages.shopify.premium.price": "$1,000 USD",
     "packages.shopify.premium.time": "Delivery: 20-25 business days",
     "packages.shopify.premium.feature1":
       "Everything in Professional + 150 products",
@@ -193,7 +193,7 @@ const translations = {
     "packages.maintenance.description": "Keep your site running smoothly",
 
     "packages.maintenance.basic.name": "Basic Plan",
-    "packages.maintenance.basic.price": "$120 USD/month",
+    "packages.maintenance.basic.price": "$80 USD/month",
     "packages.maintenance.basic.feature1": "Up to 3 hours of work per month",
     "packages.maintenance.basic.feature2": "Plugin/theme updates",
     "packages.maintenance.basic.feature3": "Weekly automatic backups",
@@ -201,7 +201,7 @@ const translations = {
     "packages.maintenance.basic.feature5": "Email support (48hr response)",
 
     "packages.maintenance.professional.name": "Professional Plan",
-    "packages.maintenance.professional.price": "$240 USD/month",
+    "packages.maintenance.professional.price": "$160 USD/month",
     "packages.maintenance.professional.feature1": "Up to 8 hours of work per month",
     "packages.maintenance.professional.feature2": "Daily automatic backups",
     "packages.maintenance.professional.feature3": "Monthly speed optimization",
@@ -210,7 +210,7 @@ const translations = {
       "Email & WhatsApp support (24hr response)",
 
     "packages.maintenance.premium.name": "Premium Plan",
-    "packages.maintenance.premium.price": "$480 USD/month",
+    "packages.maintenance.premium.price": "$280 USD/month",
     "packages.maintenance.premium.feature1": "Up to 16 hours of work per month",
     "packages.maintenance.premium.feature2": "24/7 monitoring with alerts",
     "packages.maintenance.premium.feature3": "Unlimited product updates",
@@ -229,7 +229,7 @@ const translations = {
     "packages.seo.description": "Improve your search engine rankings",
 
     "packages.seo.basic.name": "Basic SEO",
-    "packages.seo.basic.price": "$320 USD",
+    "packages.seo.basic.price": "$120 USD",
     "packages.seo.basic.time": "Delivery: 3-5 business days",
     "packages.seo.basic.feature1": "SEO plugin installation & configuration",
     "packages.seo.basic.feature2": "Title & meta description optimization (10 pages)",
@@ -238,7 +238,7 @@ const translations = {
     "packages.seo.basic.feature5": "Basic image optimization (alt tags)",
 
     "packages.seo.professional.name": "Professional SEO",
-    "packages.seo.professional.price": "$640 USD",
+    "packages.seo.professional.price": "$320 USD",
     "packages.seo.professional.time": "Delivery: 7-10 business days",
     "packages.seo.professional.feature1":
       "Everything in Basic + Keyword research (20 keywords)",
@@ -248,7 +248,7 @@ const translations = {
     "packages.seo.professional.feature5": "3 months of monthly reviews",
 
     "packages.seo.premium.name": "Premium SEO",
-    "packages.seo.premium.price": "$1,200 USD",
+    "packages.seo.premium.price": "$650 USD",
     "packages.seo.premium.time": "Delivery: 14-18 business days",
     "packages.seo.premium.feature1":
       "Everything in Professional + Deep keyword research (50+)",
@@ -455,7 +455,7 @@ const translations = {
     "packages.webdev.description": "Soluciones completas de e-commerce",
 
     "packages.webdev.wordpress.basic.name": "Paquete Básico",
-    "packages.webdev.wordpress.basic.price": "$520 USD",
+    "packages.webdev.wordpress.basic.price": "$310 USD",
     "packages.webdev.wordpress.basic.time": "Entrega: 7-10 días hábiles",
     "packages.webdev.wordpress.basic.feature1":
       "Instalación de WordPress + WooCommerce",
@@ -469,7 +469,7 @@ const translations = {
     "packages.webdev.wordpress.basic.feature7": "1 revisión de cambios",
 
     "packages.webdev.wordpress.professional.name": "Paquete Profesional",
-    "packages.webdev.wordpress.professional.price": "$910 USD",
+    "packages.webdev.wordpress.professional.price": "$740 USD",
     "packages.webdev.wordpress.professional.time":
       "Entrega: 14-18 días hábiles",
     "packages.webdev.wordpress.professional.feature1":
@@ -485,7 +485,7 @@ const translations = {
     "packages.webdev.wordpress.professional.feature6": "2 revisiones de cambios",
 
     "packages.webdev.wordpress.premium.name": "Paquete Premium",
-    "packages.webdev.wordpress.premium.price": "$1,900 USD",
+    "packages.webdev.wordpress.premium.price": "$1,150 USD",
     "packages.webdev.wordpress.premium.time": "Entrega: 25-30 días hábiles",
     "packages.webdev.wordpress.premium.feature1":
       "Todo lo del Profesional + Template custom ($200)",
@@ -505,7 +505,7 @@ const translations = {
     "packages.shopify.description": "Tiendas Shopify rápidas y confiables",
 
     "packages.shopify.basic.name": "Paquete Básico",
-    "packages.shopify.basic.price": "$460 USD",
+    "packages.shopify.basic.price": "$210 USD",
     "packages.shopify.basic.time": "Entrega: 5-7 días hábiles",
     "packages.shopify.basic.feature1": "Configuración completa de tienda Shopify",
     "packages.shopify.basic.feature2": "Theme de Shopify Theme Store",
@@ -514,7 +514,7 @@ const translations = {
     "packages.shopify.basic.feature5": "Integración con Google Analytics",
 
     "packages.shopify.professional.name": "Paquete Profesional",
-    "packages.shopify.professional.price": "$860 USD",
+    "packages.shopify.professional.price": "$450 USD",
     "packages.shopify.professional.time": "Entrega: 10-14 días hábiles",
     "packages.shopify.professional.feature1":
       "Todo lo del Básico + Theme premium ($180-$350)",
@@ -526,7 +526,7 @@ const translations = {
     "packages.shopify.professional.feature5": "SEO optimizado + Blog",
 
     "packages.shopify.premium.name": "Paquete Premium",
-    "packages.shopify.premium.price": "$1,420 USD",
+    "packages.shopify.premium.price": "$1,000 USD",
     "packages.shopify.premium.time": "Entrega: 20-25 días hábiles",
     "packages.shopify.premium.feature1":
       "Todo lo del Profesional + 150 productos",
@@ -542,7 +542,7 @@ const translations = {
     "packages.maintenance.description": "Mantén tu sitio funcionando sin problemas",
 
     "packages.maintenance.basic.name": "Plan Básico",
-    "packages.maintenance.basic.price": "$120 USD/mes",
+    "packages.maintenance.basic.price": "$80 USD/mes",
     "packages.maintenance.basic.feature1": "Hasta 6 horas de trabajo al mes",
     "packages.maintenance.basic.feature2": "Actualizaciones de plugins/temas",
     "packages.maintenance.basic.feature3": "Backups automáticos semanales",
@@ -551,7 +551,7 @@ const translations = {
       "Soporte por email (respuesta en max 12hrs)",
 
     "packages.maintenance.professional.name": "Plan Profesional",
-    "packages.maintenance.professional.price": "$240 USD/mes",
+    "packages.maintenance.professional.price": "$160 USD/mes",
     "packages.maintenance.professional.feature1":
       "Hasta 12 horas de trabajo al mes",
     "packages.maintenance.professional.feature2": "Backups automáticos diarios",
@@ -562,7 +562,7 @@ const translations = {
       "Soporte por email y WhatsApp (respuesta en max 6hrs)",
 
     "packages.maintenance.premium.name": "Plan Premium",
-    "packages.maintenance.premium.price": "$480 USD/mes",
+    "packages.maintenance.premium.price": "$280 USD/mes",
     "packages.maintenance.premium.feature1": "Hasta 18 horas de trabajo al mes",
     "packages.maintenance.premium.feature2": "Monitoreo 24/7 con alertas",
     "packages.maintenance.premium.feature3":
@@ -587,7 +587,7 @@ const translations = {
     "packages.seo.description": "Mejora tu posicionamiento en buscadores",
 
     "packages.seo.basic.name": "SEO Básico",
-    "packages.seo.basic.price": "$320 USD",
+    "packages.seo.basic.price": "$120 USD",
     "packages.seo.basic.time": "Entrega: 3-5 días hábiles",
     "packages.seo.basic.feature1":
       "Instalación y configuración de plugin SEO",
@@ -598,7 +598,7 @@ const translations = {
     "packages.seo.basic.feature5": "Optimización básica de imágenes (alt tags)",
 
     "packages.seo.professional.name": "SEO Profesional",
-    "packages.seo.professional.price": "$640 USD",
+    "packages.seo.professional.price": "$320 USD",
     "packages.seo.professional.time": "Entrega: 7-10 días hábiles",
     "packages.seo.professional.feature1":
       "Todo lo del Básico + Research de keywords (20 palabras clave)",
@@ -609,7 +609,7 @@ const translations = {
     "packages.seo.professional.feature5": "3 meses de revisiones mensuales",
 
     "packages.seo.premium.name": "SEO Premium",
-    "packages.seo.premium.price": "$1,200 USD",
+    "packages.seo.premium.price": "$650 USD",
     "packages.seo.premium.time": "Entrega: 14-18 días hábiles",
     "packages.seo.premium.feature1":
       "Todo lo del Profesional + Research profundo (50+ keywords)",
