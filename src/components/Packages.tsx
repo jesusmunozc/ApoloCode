@@ -317,17 +317,13 @@ export default function Packages() {
                         onClick={() => toggleSubPackage(index, subIndex)}
                         className="w-full px-4 sm:px-5 md:px-6 py-4 md:py-5 flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
                       >
-                        <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                            <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 text-left">
-                              {t(pkg.nameKey)}
-                            </h4>
-                            <div className="inline-flex items-center">
-                              <span className="bg-primary-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base whitespace-nowrap">
-                                {t(pkg.priceKey)}
-                              </span>
-                            </div>
-                          </div>
+                        <div className="flex items-center justify-between gap-3 md:gap-4 flex-1 min-w-0">
+                          <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 text-left">
+                            {t(pkg.nameKey)}
+                          </h4>
+                          <span className="bg-primary-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base whitespace-nowrap w-[130px] sm:w-[150px] text-center">
+                            {t(pkg.priceKey)}
+                          </span>
                         </div>
                         <svg
                           className={`w-5 h-5 md:w-6 md:h-6 text-gray-600 transition-transform duration-300 flex-shrink-0 ml-2 ${
