@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ReCAPTCHA from "react-google-recaptcha";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -140,21 +141,41 @@ export default function Contact() {
     >
       {/* Tech accent elements */}
       <div className="absolute inset-0 opacity-15">
-        <div className="absolute top-20 left-1/4 w-40 h-40 bg-gradient-to-br from-primary-100/70 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-tl from-secondary-100/70 to-transparent rounded-full blur-3xl"></div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-1/4 w-40 h-40 bg-gradient-to-br from-primary-100/70 to-transparent rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.2, 0.15] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-tl from-secondary-100/70 to-transparent rounded-full blur-3xl"
+        />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center mb-8 lg:mb-12 animate-fade-in">
+        <motion.div 
+          className="text-center mb-8 lg:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <h2 className="heading-2 mb-3 lg:mb-4">{t("contact.title")}</h2>
           <p className="text-large max-w-3xl mx-auto">
             {t("contact.description")}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* Enhanced Contact Form - First on mobile */}
-          <div className="card p-6 lg:p-10 animate-slide-up bg-gradient-to-br from-secondary-50 to-primary-50/30 relative order-1 lg:order-2">
+          <motion.div 
+            className="card p-6 lg:p-10 bg-gradient-to-br from-secondary-50 to-primary-50/30 relative order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/30 rounded-2xl opacity-60"></div>
             <form
               onSubmit={handleSubmit}
@@ -251,9 +272,11 @@ export default function Contact() {
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 disabled={isSubmitting || !captchaToken}
+                whileHover={{ scale: isSubmitting || !captchaToken ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting || !captchaToken ? 1 : 0.98 }}
                 className={`w-full py-3 lg:py-5 text-lg font-bold tracking-wide transition-all duration-300 rounded-lg ${
                   isSubmitting || !captchaToken
                     ? "bg-gray-400 cursor-not-allowed"
@@ -263,20 +286,46 @@ export default function Contact() {
                 {isSubmitting
                   ? t("contact.form.sending")
                   : t("contact.form.submit")}
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
 
           {/* FAQ Section - Second on mobile */}
-          <div className="animate-slide-up order-2 lg:order-1">
+          <motion.div 
+            className="order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <h3 className="heading-3 mb-4 lg:mb-6 text-primary-600">
               {t("faq.title")}
             </h3>
 
-            <div className="space-y-2 lg:space-y-3">
+            <motion.div 
+              className="space-y-2 lg:space-y-3"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+                }
+              }}
+            >
               {faqItems.map((faq, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+                    }
+                  }}
                   className={`border border-secondary-200 rounded-lg lg:rounded-xl overflow-hidden bg-white/50 backdrop-blur-sm faq-card ${
                     expandedFaq === index
                       ? "faq-card-active border-primary-200 bg-white/80"
@@ -333,12 +382,18 @@ export default function Contact() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Contact Info Summary */}
-            <div className="mt-4 lg:mt-6 p-3 bg-gradient-to-br from-primary-50/50 to-secondary-50/30 rounded-lg lg:rounded-xl border border-primary-100">
+            <motion.div 
+              className="mt-4 lg:mt-6 p-3 bg-gradient-to-br from-primary-50/50 to-secondary-50/30 rounded-lg lg:rounded-xl border border-primary-100"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <h4 className="font-bold text-secondary-900 mb-2 text-sm lg:text-base">
                 {t("contact.info.title")}
               </h4>
@@ -360,15 +415,20 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
       {/* Notificación Profesional */}
-      {notification.show && (
-        <div
-          className={`fixed top-4 right-4 z-50 max-w-md w-full mx-4 transform transition-all duration-500 ease-in-out ${
+      <AnimatePresence>
+        {notification.show && (
+          <motion.div
+            initial={{ opacity: 0, x: 100, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 100, scale: 0.9 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className={`fixed top-4 right-4 z-50 max-w-md w-full mx-4 ${
             notification.show
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
@@ -465,8 +525,9 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </section>
   );
 }

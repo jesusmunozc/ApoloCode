@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const { t, language } = useLanguage();
@@ -108,26 +109,60 @@ export default function Services() {
     >
       {/* Tech accent elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 right-1/4 w-24 h-24 bg-gradient-to-br from-primary-100/60 to-transparent rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-secondary-100/60 to-transparent rounded-full blur-3xl"></div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-10 right-1/4 w-24 h-24 bg-gradient-to-br from-primary-100/60 to-transparent rounded-full blur-2xl"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.35, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-secondary-100/60 to-transparent rounded-full blur-3xl"
+        />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <h2 className="heading-2 mb-6">{t("services.title")}</h2>
           <p className="text-large max-w-3xl mx-auto">
             {t("services.description")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Primera fila: Página Informativa, Landing Page, Tienda Online */}
         <div className="flex justify-center mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+              }
+            }}
+          >
             {services.slice(0, 3).map((service, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="group relative overflow-hidden animate-slide-up w-full"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="group relative overflow-hidden w-full"
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
+                  }
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 {/* Etiqueta "Más Contratado" solo para Landing Page (index 1) */}
                 {index === 1 && (
@@ -207,19 +242,39 @@ export default function Services() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Segunda fila: Optimización y Mantenimiento - Centrados */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+              }
+            }}
+          >
             {services.slice(3, 5).map((service, index) => (
-              <div
+              <motion.div
                 key={index + 3}
-                className="group relative overflow-hidden animate-slide-up w-full"
-                style={{ animationDelay: `${(index + 3) * 150}ms` }}
+                className="group relative overflow-hidden w-full"
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
+                  }
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 {/* Subtle premium border effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-200 via-primary-200 to-secondary-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -289,9 +344,9 @@ export default function Services() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,45 +18,51 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:container-padding relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a
-            href="#home"
+          <Link
+            href="/#home"
             className="transition-all duration-300 hover:scale-105"
           >
             <Logo width={48} height={48} />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
+            <Link
+              href="/#home"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
               {t("nav.home")}
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/#services"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
               {t("nav.services")}
-            </a>
-            <a
-              href="#packages"
+            </Link>
+            <Link
+              href="/#packages"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
               {t("nav.packages")}
-            </a>
-            <a
-              href="#portfolio"
+            </Link>
+            <Link
+              href="/#portfolio"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
               {t("nav.portfolio")}
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/develop"
+              className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
+            >
+              {t("nav.develop")}
+            </Link>
+            <Link
+              href="/#contact"
               className="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300"
             >
               {t("nav.contact")}
-            </a>
+            </Link>
             <LanguageSelector />
           </div>
 
@@ -89,36 +96,48 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-6 pb-6 border-t border-secondary-200/30">
             <div className="flex flex-col space-y-4 pt-6">
-              <a
-                href="#home"
+              <Link
+                href="/#home"
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.home")}
-              </a>
-              <a
-                href="#services"
+              </Link>
+              <Link
+                href="/#services"
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.services")}
-              </a>
-              <a
-                href="#packages"
+              </Link>
+              <Link
+                href="/#packages"
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.packages")}
-              </a>
-              <a
-                href="#portfolio"
+              </Link>
+              <Link
+                href="/#portfolio"
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.portfolio")}
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                href="/develop"
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.develop")}
+              </Link>
+              <Link
+                href="/#contact"
+                className="text-secondary-700 hover:text-primary-600 font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.contact")}
-              </a>
+              </Link>
             </div>
           </div>
         )}
