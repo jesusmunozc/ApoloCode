@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FloatingElement } from "./animations/MotionWrapper";
@@ -13,9 +13,12 @@ export default function Hero() {
   const [isTyping, setIsTyping] = useState(true);
 
   // Obtener las palabras del contexto de idioma
-  const words = Array.isArray(t("hero.words"))
-    ? (t("hero.words") as string[])
-    : ["Diseñamos", "Creamos"];
+  const words = useMemo(() => {
+    const heroWords = t("hero.words");
+    return Array.isArray(heroWords)
+      ? (heroWords as string[])
+      : ["Diseñamos", "Creamos"];
+  }, [t]);
 
   // Reiniciar la animación cuando cambia el idioma
   useEffect(() => {
