@@ -115,7 +115,8 @@ const translations = {
     "packages.webdev.wordpress.basic.time": "Delivery: 7-10 business days",
     "packages.webdev.wordpress.basic.feature1":
       "WordPress + WooCommerce installation",
-    "packages.webdev.wordpress.basic.feature2": "Premium template included ($60)",
+    "packages.webdev.wordpress.basic.feature2":
+      "Premium template included ($60)",
     "packages.webdev.wordpress.basic.feature3": "Up to 20 products configured",
     "packages.webdev.wordpress.basic.feature4":
       "Payment gateway setup (1 option)",
@@ -135,7 +136,8 @@ const translations = {
       "Multiple payment gateways (up to 3)",
     "packages.webdev.wordpress.professional.feature4":
       "Abandoned cart recovery",
-    "packages.webdev.wordpress.professional.feature5": "Blog setup (5 articles)",
+    "packages.webdev.wordpress.professional.feature5":
+      "Blog setup (5 articles)",
     "packages.webdev.wordpress.professional.feature6": "2 rounds of revisions",
 
     "packages.webdev.wordpress.premium.name": "Premium Package",
@@ -182,8 +184,7 @@ const translations = {
     "packages.shopify.premium.time": "Delivery: 20-25 business days",
     "packages.shopify.premium.feature1":
       "Everything in Professional + 150 products",
-    "packages.shopify.premium.feature2":
-      "Custom Liquid development (15 hours)",
+    "packages.shopify.premium.feature2": "Custom Liquid development (15 hours)",
     "packages.shopify.premium.feature3": "External systems integration (API)",
     "packages.shopify.premium.feature4": "Multi-language and multi-currency",
     "packages.shopify.premium.feature5": "1 month post-launch support",
@@ -202,7 +203,8 @@ const translations = {
 
     "packages.maintenance.professional.name": "Professional Plan",
     "packages.maintenance.professional.price": "$160 USD/month",
-    "packages.maintenance.professional.feature1": "Up to 8 hours of work per month",
+    "packages.maintenance.professional.feature1":
+      "Up to 8 hours of work per month",
     "packages.maintenance.professional.feature2": "Daily automatic backups",
     "packages.maintenance.professional.feature3": "Monthly speed optimization",
     "packages.maintenance.professional.feature4": "Up to 10 products/month",
@@ -215,14 +217,17 @@ const translations = {
     "packages.maintenance.premium.feature2": "24/7 monitoring with alerts",
     "packages.maintenance.premium.feature3": "Unlimited product updates",
     "packages.maintenance.premium.feature4": "Priority support (4hr response)",
-    "packages.maintenance.premium.feature5": "A/B testing & conversion optimization",
+    "packages.maintenance.premium.feature5":
+      "A/B testing & conversion optimization",
 
     "packages.maintenance.enterprise.name": "Enterprise Plan",
     "packages.maintenance.enterprise.price": "$960 USD/month",
-    "packages.maintenance.enterprise.feature1": "Up to 40 hours of work per month",
+    "packages.maintenance.enterprise.feature1":
+      "Up to 40 hours of work per month",
     "packages.maintenance.enterprise.feature2": "Dedicated account manager",
     "packages.maintenance.enterprise.feature3": "24/7 emergency availability",
-    "packages.maintenance.enterprise.feature4": "Advanced security with dedicated firewall",
+    "packages.maintenance.enterprise.feature4":
+      "Advanced security with dedicated firewall",
 
     // SEO Packages
     "packages.seo.title": "SEO Optimization",
@@ -232,7 +237,8 @@ const translations = {
     "packages.seo.basic.price": "$120 USD",
     "packages.seo.basic.time": "Delivery: 3-5 business days",
     "packages.seo.basic.feature1": "SEO plugin installation & configuration",
-    "packages.seo.basic.feature2": "Title & meta description optimization (10 pages)",
+    "packages.seo.basic.feature2":
+      "Title & meta description optimization (10 pages)",
     "packages.seo.basic.feature3": "XML sitemap configuration",
     "packages.seo.basic.feature4": "Google Search Console integration",
     "packages.seo.basic.feature5": "Basic image optimization (alt tags)",
@@ -242,7 +248,8 @@ const translations = {
     "packages.seo.professional.time": "Delivery: 7-10 business days",
     "packages.seo.professional.feature1":
       "Everything in Basic + Keyword research (20 keywords)",
-    "packages.seo.professional.feature2": "Complete on-page optimization (30 pages)",
+    "packages.seo.professional.feature2":
+      "Complete on-page optimization (30 pages)",
     "packages.seo.professional.feature3": "Basic schema markup",
     "packages.seo.professional.feature4": "Internal linking strategy",
     "packages.seo.professional.feature5": "3 months of monthly reviews",
@@ -347,17 +354,23 @@ const translations = {
     "team.badge": "Development Team",
     "team.title": "We Are a Team of",
     "team.title.highlight": "Expert Freelancers",
-    "team.description": "We are a passionate team of independent developers specialized in creating modern, scalable and high-performance digital solutions. We combine our experience and skills to bring your ideas to life.",
+    "team.description":
+      "We are a passionate team of independent developers specialized in creating modern, scalable and high-performance digital solutions. We combine our experience and skills to bring your ideas to life.",
     "team.highlight1.title": "Agile Development",
-    "team.highlight1.desc": "We work with modern methodologies to deliver fast and quality results.",
+    "team.highlight1.desc":
+      "We work with modern methodologies to deliver fast and quality results.",
     "team.highlight2.title": "Innovative Solutions",
-    "team.highlight2.desc": "We implement the latest technologies to create unique digital products.",
+    "team.highlight2.desc":
+      "We implement the latest technologies to create unique digital products.",
     "team.highlight3.title": "Direct Communication",
-    "team.highlight3.desc": "Direct contact with developers, no intermediaries or delays.",
+    "team.highlight3.desc":
+      "Direct contact with developers, no intermediaries or delays.",
     "team.highlight4.title": "Fast Delivery",
-    "team.highlight4.desc": "Optimized processes for efficient delivery without sacrificing quality.",
+    "team.highlight4.desc":
+      "Optimized processes for efficient delivery without sacrificing quality.",
     "team.tech.title": "Technologies We Master",
-    "team.tech.description": "We work with the most modern and demanded tools in the market to build robust and scalable solutions.",
+    "team.tech.description":
+      "We work with the most modern and demanded tools in the market to build robust and scalable solutions.",
     "team.cta.title": "Ready to start your project?",
     "team.cta.description": "Contact us below",
 
@@ -365,35 +378,43 @@ const translations = {
     "develop.badge": "Freelance Development Team",
     "develop.hero.title": "Expert Freelancers",
     "develop.hero.highlight": "At Your Service",
-    "develop.hero.description": "We are a team of independent developers specialized in creating custom digital solutions. From web applications to process automation, we transform your ideas into reality with cutting-edge technology.",
+    "develop.hero.description":
+      "We are a team of independent developers specialized in creating custom digital solutions. From web applications to process automation, we transform your ideas into reality with cutting-edge technology.",
     "develop.cta.primary": "Start a Project",
     "develop.cta.secondary": "View Web Services",
     "develop.services.title": "What We Do",
-    "develop.services.description": "Comprehensive development solutions tailored to your specific needs.",
+    "develop.services.description":
+      "Comprehensive development solutions tailored to your specific needs.",
     "develop.service1.title": "Custom Development",
-    "develop.service1.desc": "We build web applications, APIs and digital platforms from scratch, tailored to your business needs.",
+    "develop.service1.desc":
+      "We build web applications, APIs and digital platforms from scratch, tailored to your business needs.",
     "develop.service1.feature1": "Web and mobile applications",
     "develop.service1.feature2": "RESTful and GraphQL APIs",
     "develop.service1.feature3": "Custom management systems",
     "develop.service2.title": "Integrations & APIs",
-    "develop.service2.desc": "We connect your systems and automate processes with smart integrations.",
+    "develop.service2.desc":
+      "We connect your systems and automate processes with smart integrations.",
     "develop.service2.feature1": "Third-party integrations",
     "develop.service2.feature2": "Custom API development",
     "develop.service2.feature3": "System migration",
     "develop.service3.title": "AI & Automation",
-    "develop.service3.desc": "We implement artificial intelligence and workflow automation solutions.",
+    "develop.service3.desc":
+      "We implement artificial intelligence and workflow automation solutions.",
     "develop.service3.feature1": "Chatbots and virtual assistants",
     "develop.service3.feature2": "n8n and Zapier automations",
     "develop.service3.feature3": "OpenAI and LLM integration",
     "develop.service4.title": "Cloud & DevOps",
-    "develop.service4.desc": "We deploy and manage your applications in the cloud with best practices.",
+    "develop.service4.desc":
+      "We deploy and manage your applications in the cloud with best practices.",
     "develop.service4.feature1": "AWS, Vercel, Firebase deployment",
     "develop.service4.feature2": "Docker and containerization",
     "develop.service4.feature3": "CI/CD and monitoring",
     "develop.tech.title": "Our Technology Stack",
-    "develop.tech.description": "We master the most modern and in-demand tools to build robust and scalable solutions.",
+    "develop.tech.description":
+      "We master the most modern and in-demand tools to build robust and scalable solutions.",
     "develop.contact.title": "Let's Work Together",
-    "develop.contact.description": "Do you have a project in mind? Contact us and let's discuss how we can help you achieve your goals.",
+    "develop.contact.description":
+      "Do you have a project in mind? Contact us and let's discuss how we can help you achieve your goals.",
     "develop.contact.email": "Contact",
     "develop.back": "Back to web services",
 
@@ -516,7 +537,8 @@ const translations = {
       "Instalación de WordPress + WooCommerce",
     "packages.webdev.wordpress.basic.feature2":
       "Template premium incluido ($60)",
-    "packages.webdev.wordpress.basic.feature3": "Hasta 20 productos configurados",
+    "packages.webdev.wordpress.basic.feature3":
+      "Hasta 20 productos configurados",
     "packages.webdev.wordpress.basic.feature4":
       "Configuración de pasarela de pago (1 opción)",
     "packages.webdev.wordpress.basic.feature5": "Configuración básica de SEO",
@@ -537,7 +559,8 @@ const translations = {
       "Recuperación de carrito abandonado",
     "packages.webdev.wordpress.professional.feature5":
       "Blog configurado (5 artículos)",
-    "packages.webdev.wordpress.professional.feature6": "2 revisiones de cambios",
+    "packages.webdev.wordpress.professional.feature6":
+      "2 revisiones de cambios",
 
     "packages.webdev.wordpress.premium.name": "Paquete Premium",
     "packages.webdev.wordpress.premium.price": "$1,150 USD",
@@ -562,7 +585,8 @@ const translations = {
     "packages.shopify.basic.name": "Paquete Básico",
     "packages.shopify.basic.price": "$210 USD",
     "packages.shopify.basic.time": "Entrega: 5-7 días hábiles",
-    "packages.shopify.basic.feature1": "Configuración completa de tienda Shopify",
+    "packages.shopify.basic.feature1":
+      "Configuración completa de tienda Shopify",
     "packages.shopify.basic.feature2": "Theme de Shopify Theme Store",
     "packages.shopify.basic.feature3": "Hasta 20 productos configurados",
     "packages.shopify.basic.feature4": "Configuración de pasarela de pago",
@@ -594,7 +618,8 @@ const translations = {
 
     // Paquetes de Mantenimiento
     "packages.maintenance.title": "Planes de Mantenimiento y Soporte",
-    "packages.maintenance.description": "Mantén tu sitio funcionando sin problemas",
+    "packages.maintenance.description":
+      "Mantén tu sitio funcionando sin problemas",
 
     "packages.maintenance.basic.name": "Plan Básico",
     "packages.maintenance.basic.price": "$80 USD/mes",
@@ -644,8 +669,7 @@ const translations = {
     "packages.seo.basic.name": "SEO Básico",
     "packages.seo.basic.price": "$120 USD",
     "packages.seo.basic.time": "Entrega: 3-5 días hábiles",
-    "packages.seo.basic.feature1":
-      "Instalación y configuración de plugin SEO",
+    "packages.seo.basic.feature1": "Instalación y configuración de plugin SEO",
     "packages.seo.basic.feature2":
       "Optimización de títulos y meta descripciones (10 páginas)",
     "packages.seo.basic.feature3": "Configuración de sitemap XML",
@@ -762,17 +786,23 @@ const translations = {
     "team.badge": "Equipo de Desarrollo",
     "team.title": "Somos un Equipo de",
     "team.title.highlight": "Freelancers Expertos",
-    "team.description": "Somos un equipo apasionado de desarrolladores independientes especializados en crear soluciones digitales modernas, escalables y de alto rendimiento. Combinamos nuestra experiencia y habilidades para dar vida a tus ideas.",
+    "team.description":
+      "Somos un equipo apasionado de desarrolladores independientes especializados en crear soluciones digitales modernas, escalables y de alto rendimiento. Combinamos nuestra experiencia y habilidades para dar vida a tus ideas.",
     "team.highlight1.title": "Desarrollo Ágil",
-    "team.highlight1.desc": "Trabajamos con metodologías modernas para entregar resultados rápidos y de calidad.",
+    "team.highlight1.desc":
+      "Trabajamos con metodologías modernas para entregar resultados rápidos y de calidad.",
     "team.highlight2.title": "Soluciones Innovadoras",
-    "team.highlight2.desc": "Implementamos las últimas tecnologías para crear productos digitales únicos.",
+    "team.highlight2.desc":
+      "Implementamos las últimas tecnologías para crear productos digitales únicos.",
     "team.highlight3.title": "Comunicación Directa",
-    "team.highlight3.desc": "Contacto directo con los desarrolladores, sin intermediarios ni demoras.",
+    "team.highlight3.desc":
+      "Contacto directo con los desarrolladores, sin intermediarios ni demoras.",
     "team.highlight4.title": "Entrega Rápida",
-    "team.highlight4.desc": "Procesos optimizados para entregas eficientes sin sacrificar calidad.",
+    "team.highlight4.desc":
+      "Procesos optimizados para entregas eficientes sin sacrificar calidad.",
     "team.tech.title": "Tecnologías que Dominamos",
-    "team.tech.description": "Trabajamos con las herramientas más modernas y demandadas del mercado para construir soluciones robustas y escalables.",
+    "team.tech.description":
+      "Trabajamos con las herramientas más modernas y demandadas del mercado para construir soluciones robustas y escalables.",
     "team.cta.title": "¿Listo para iniciar tu proyecto?",
     "team.cta.description": "Contáctanos abajo",
 
@@ -780,35 +810,43 @@ const translations = {
     "develop.badge": "Equipo de Desarrollo Freelance",
     "develop.hero.title": "Freelancers Expertos",
     "develop.hero.highlight": "A Tu Servicio",
-    "develop.hero.description": "Somos un equipo de desarrolladores independientes especializados en crear soluciones digitales a medida. Desde aplicaciones web hasta automatización de procesos, transformamos tus ideas en realidad con tecnología de vanguardia.",
+    "develop.hero.description":
+      "Somos un equipo de desarrolladores independientes especializados en crear soluciones digitales a medida. Desde aplicaciones web hasta automatización de procesos, transformamos tus ideas en realidad con tecnología de vanguardia.",
     "develop.cta.primary": "Iniciar un Proyecto",
     "develop.cta.secondary": "Ver Servicios Web",
     "develop.services.title": "Lo Que Hacemos",
-    "develop.services.description": "Soluciones de desarrollo integrales adaptadas a tus necesidades específicas.",
+    "develop.services.description":
+      "Soluciones de desarrollo integrales adaptadas a tus necesidades específicas.",
     "develop.service1.title": "Desarrollo a Medida",
-    "develop.service1.desc": "Construimos aplicaciones web, APIs y plataformas digitales desde cero, adaptadas a las necesidades de tu negocio.",
+    "develop.service1.desc":
+      "Construimos aplicaciones web, APIs y plataformas digitales desde cero, adaptadas a las necesidades de tu negocio.",
     "develop.service1.feature1": "Aplicaciones web y móviles",
     "develop.service1.feature2": "APIs RESTful y GraphQL",
     "develop.service1.feature3": "Sistemas de gestión personalizados",
     "develop.service2.title": "Integraciones & APIs",
-    "develop.service2.desc": "Conectamos tus sistemas y automatizamos procesos con integraciones inteligentes.",
+    "develop.service2.desc":
+      "Conectamos tus sistemas y automatizamos procesos con integraciones inteligentes.",
     "develop.service2.feature1": "Integraciones de terceros",
     "develop.service2.feature2": "Desarrollo de APIs personalizadas",
     "develop.service2.feature3": "Migración de sistemas",
     "develop.service3.title": "IA & Automatización",
-    "develop.service3.desc": "Implementamos soluciones de inteligencia artificial y automatización de flujos de trabajo.",
+    "develop.service3.desc":
+      "Implementamos soluciones de inteligencia artificial y automatización de flujos de trabajo.",
     "develop.service3.feature1": "Chatbots y asistentes virtuales",
     "develop.service3.feature2": "Automatizaciones con n8n y Zapier",
     "develop.service3.feature3": "Integración con OpenAI y LLMs",
     "develop.service4.title": "Cloud & DevOps",
-    "develop.service4.desc": "Desplegamos y gestionamos tus aplicaciones en la nube con las mejores prácticas.",
+    "develop.service4.desc":
+      "Desplegamos y gestionamos tus aplicaciones en la nube con las mejores prácticas.",
     "develop.service4.feature1": "Despliegue en AWS, Vercel, Firebase",
     "develop.service4.feature2": "Docker y containerización",
     "develop.service4.feature3": "CI/CD y monitoreo",
     "develop.tech.title": "Nuestro Stack Tecnológico",
-    "develop.tech.description": "Dominamos las herramientas más modernas y demandadas para construir soluciones robustas y escalables.",
+    "develop.tech.description":
+      "Dominamos las herramientas más modernas y demandadas para construir soluciones robustas y escalables.",
     "develop.contact.title": "Trabajemos Juntos",
-    "develop.contact.description": "¿Tienes un proyecto en mente? Contáctanos y hablemos de cómo podemos ayudarte a alcanzar tus objetivos.",
+    "develop.contact.description":
+      "¿Tienes un proyecto en mente? Contáctanos y hablemos de cómo podemos ayudarte a alcanzar tus objetivos.",
     "develop.contact.email": "Contacto",
     "develop.back": "Volver a servicios web",
 

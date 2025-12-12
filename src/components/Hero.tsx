@@ -59,9 +59,9 @@ export default function Hero() {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -71,9 +71,9 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
-      }
-    }
+        ease: "easeOut" as const,
+      },
+    },
   };
 
   const imageVariants = {
@@ -84,9 +84,9 @@ export default function Hero() {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut" as const
-      }
-    }
+        ease: "easeOut" as const,
+      },
+    },
   };
 
   const statVariants = {
@@ -97,9 +97,9 @@ export default function Hero() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const
-      }
-    }
+        ease: "easeOut" as const,
+      },
+    },
   };
 
   const buttonVariants = {
@@ -109,14 +109,14 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const
-      }
+        ease: "easeOut" as const,
+      },
     },
     hover: {
       scale: 1.05,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
-    tap: { scale: 0.98 }
+    tap: { scale: 0.98 },
   };
 
   return (
@@ -126,58 +126,72 @@ export default function Hero() {
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-30">
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3]
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-20 left-1/4 w-32 h-32 bg-gradient-to-br from-primary-100/50 to-blue-100/60 rounded-full blur-2xl"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.15, 1],
-            opacity: [0.3, 0.4, 0.3]
+            opacity: [0.3, 0.4, 0.3],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-tl from-secondary-100/50 to-blue-200/40 rounded-full blur-3xl"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.2, 1],
             x: [0, 20, 0],
-            y: [0, -20, 0]
+            y: [0, -20, 0],
           }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-blue-50/30 to-primary-50/40 rounded-full blur-3xl"
         />
       </div>
 
       {/* Additional animated overlay effects */}
       <div className="absolute inset-0 opacity-20">
-        <motion.div 
+        <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-10 right-1/3 w-24 h-24 bg-gradient-to-br from-blue-300/40 to-transparent rounded-full blur-xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
           className="absolute bottom-16 left-1/3 w-28 h-28 bg-gradient-to-tr from-blue-200/35 to-primary-200/40 rounded-full blur-2xl"
         />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:container-padding relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-16 min-h-[70vh] sm:min-h-[75vh] lg:min-h-[70vh]">
-          
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             className="w-full lg:w-1/2 text-center lg:text-left order-1 lg:order-1"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6 relative px-2 sm:px-0"
             >
@@ -196,7 +210,7 @@ export default function Hero() {
                   }`}
                 ></span>
               </span>
-              <motion.span 
+              <motion.span
                 className="text-primary-600 block lg:inline relative"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -208,7 +222,7 @@ export default function Hero() {
                 </span>
               </motion.span>
               <br className="hidden lg:block" />
-              <motion.span 
+              <motion.span
                 className="block text-secondary-900"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -218,7 +232,7 @@ export default function Hero() {
               </motion.span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="text-sm sm:text-base lg:text-xl text-secondary-600 leading-relaxed mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0 whitespace-pre-line"
             >
@@ -226,16 +240,16 @@ export default function Hero() {
             </motion.p>
 
             {/* Experience Statistics */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-3 sm:gap-4 lg:flex lg:gap-8 justify-center lg:justify-start mb-6 lg:mb-8 px-1 sm:px-2 lg:px-0"
               variants={containerVariants}
             >
               {[
                 { value: "3+", label: t("hero.stats.years") },
                 { value: "20+", label: t("hero.stats.projects") },
-                { value: "100%", label: t("hero.stats.clients") }
+                { value: "100%", label: t("hero.stats.clients") },
               ].map((stat, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   variants={statVariants}
                   className="text-center lg:text-left"
@@ -252,7 +266,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Buttons for desktop */}
-            <motion.div 
+            <motion.div
               className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full max-w-md sm:max-w-none mx-auto lg:mx-0"
               variants={itemVariants}
             >
@@ -278,7 +292,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Content - Image */}
-          <motion.div 
+          <motion.div
             className="w-full lg:w-1/2 flex justify-center order-2 lg:order-2 mb-4 sm:mb-6 lg:mb-0"
             variants={imageVariants}
             initial="hidden"
@@ -286,7 +300,7 @@ export default function Hero() {
           >
             <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Professional Development Image */}
-              <motion.div 
+              <motion.div
                 className="relative w-full aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-large"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
@@ -304,17 +318,23 @@ export default function Hero() {
               </motion.div>
 
               {/* Floating decorative elements */}
-              <FloatingElement duration={4} className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4">
+              <FloatingElement
+                duration={4}
+                className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4"
+              >
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-100/80 rounded-2xl rotate-12"></div>
               </FloatingElement>
-              <FloatingElement duration={5} className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4">
+              <FloatingElement
+                duration={5}
+                className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4"
+              >
                 <div className="w-8 h-8 sm:w-12 sm:h-12 bg-secondary-100/80 rounded-full"></div>
               </FloatingElement>
             </div>
           </motion.div>
 
           {/* Buttons - Mobile */}
-          <motion.div 
+          <motion.div
             className="w-full lg:hidden flex flex-col items-center order-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

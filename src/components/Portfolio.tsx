@@ -48,25 +48,35 @@ export default function Portfolio() {
     >
       {/* Enhanced tech background pattern */}
       <div className="absolute inset-0 opacity-25">
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.35, 0.25] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-10 left-1/4 w-64 h-64 bg-primary-100 rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.3, 0.25] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute bottom-10 right-1/4 w-80 h-80 bg-secondary-100 rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-full blur-3xl"
         />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-12 md:mb-14 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +92,7 @@ export default function Portfolio() {
           </p>
 
           {/* Decorative line */}
-          <motion.div 
+          <motion.div
             className="mt-6 md:mt-7 lg:mt-8 flex justify-center"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -94,7 +104,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Responsive grid layout: single column on mobile, multiple columns on larger screens */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 lg:grid-cols-1 gap-6 sm:gap-7 md:gap-8 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-4"
           initial="hidden"
           whileInView="visible"
@@ -103,8 +113,8 @@ export default function Portfolio() {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.2, delayChildren: 0.1 }
-            }
+              transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+            },
           }}
         >
           {projects.map((project, index) => (
@@ -113,11 +123,11 @@ export default function Portfolio() {
               className="w-full"
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { 
-                  opacity: 1, 
+                visible: {
+                  opacity: 1,
                   y: 0,
-                  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
-                }
+                  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+                },
               }}
             >
               <div className="relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1 overflow-hidden h-full">

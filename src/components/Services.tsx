@@ -109,20 +109,25 @@ export default function Services() {
     >
       {/* Tech accent elements */}
       <div className="absolute inset-0 opacity-20">
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-10 right-1/4 w-24 h-24 bg-gradient-to-br from-primary-100/60 to-transparent rounded-full blur-2xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.35, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-secondary-100/60 to-transparent rounded-full blur-3xl"
         />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +142,7 @@ export default function Services() {
 
         {/* Primera fila: Página Informativa, Landing Page, Tienda Online */}
         <div className="flex justify-center mb-8">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-12"
             initial="hidden"
             whileInView="visible"
@@ -146,8 +151,8 @@ export default function Services() {
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
-                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
-              }
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+              },
             }}
           >
             {services.slice(0, 3).map((service, index) => (
@@ -156,11 +161,14 @@ export default function Services() {
                 className="group relative overflow-hidden w-full"
                 variants={{
                   hidden: { opacity: 0, y: 40 },
-                  visible: { 
-                    opacity: 1, 
+                  visible: {
+                    opacity: 1,
                     y: 0,
-                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
-                  }
+                    transition: {
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    },
+                  },
                 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
@@ -249,7 +257,7 @@ export default function Services() {
 
         {/* Segunda fila: Optimización y Mantenimiento - Centrados */}
         <div className="flex justify-center">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl"
             initial="hidden"
             whileInView="visible"
@@ -258,8 +266,8 @@ export default function Services() {
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
-                transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-              }
+                transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+              },
             }}
           >
             {services.slice(3, 5).map((service, index) => (
@@ -268,11 +276,14 @@ export default function Services() {
                 className="group relative overflow-hidden w-full"
                 variants={{
                   hidden: { opacity: 0, y: 40 },
-                  visible: { 
-                    opacity: 1, 
+                  visible: {
+                    opacity: 1,
                     y: 0,
-                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
-                  }
+                    transition: {
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    },
+                  },
                 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >

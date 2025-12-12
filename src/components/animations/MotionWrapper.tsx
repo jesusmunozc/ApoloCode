@@ -5,66 +5,66 @@ import { ReactNode } from "react";
 
 // Fade in from bottom
 export const fadeInUp: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 40 
+  hidden: {
+    opacity: 0,
+    y: 40,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Fade in from left
 export const fadeInLeft: Variants = {
-  hidden: { 
-    opacity: 0, 
-    x: -40 
+  hidden: {
+    opacity: 0,
+    x: -40,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Fade in from right
 export const fadeInRight: Variants = {
-  hidden: { 
-    opacity: 0, 
-    x: 40 
+  hidden: {
+    opacity: 0,
+    x: 40,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Scale up fade in
 export const scaleIn: Variants = {
-  hidden: { 
-    opacity: 0, 
-    scale: 0.9 
+  hidden: {
+    opacity: 0,
+    scale: 0.9,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Stagger container for children
@@ -74,76 +74,76 @@ export const staggerContainer: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.1
-    }
-  }
+      delayChildren: 0.1,
+    },
+  },
 };
 
 // Stagger item
 export const staggerItem: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30 
+  hidden: {
+    opacity: 0,
+    y: 30,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Blur fade in
 export const blurFadeIn: Variants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     filter: "blur(10px)",
-    y: 20
+    y: 20,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     filter: "blur(0px)",
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
 };
 
 // Card hover animation
 export const cardHover = {
-  rest: { 
+  rest: {
     scale: 1,
     y: 0,
     transition: {
       duration: 0.3,
-      ease: "easeOut"
-    }
+      ease: "easeOut",
+    },
   },
-  hover: { 
+  hover: {
     scale: 1.02,
     y: -8,
     transition: {
       duration: 0.3,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 // Button hover animation
 export const buttonHover = {
   rest: { scale: 1 },
-  hover: { 
+  hover: {
     scale: 1.05,
     transition: {
       duration: 0.2,
-      ease: "easeOut"
-    }
+      ease: "easeOut",
+    },
   },
-  tap: { scale: 0.98 }
+  tap: { scale: 0.98 },
 };
 
 // Props interfaces
@@ -151,7 +151,12 @@ interface MotionSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  variant?: "fadeInUp" | "fadeInLeft" | "fadeInRight" | "scaleIn" | "blurFadeIn";
+  variant?:
+    | "fadeInUp"
+    | "fadeInLeft"
+    | "fadeInRight"
+    | "scaleIn"
+    | "blurFadeIn";
 }
 
 interface StaggerContainerProps {
@@ -188,14 +193,14 @@ const getVariant = (variant: MotionSectionProps["variant"]): Variants => {
 };
 
 // Animated section component
-export function MotionSection({ 
-  children, 
-  className = "", 
+export function MotionSection({
+  children,
+  className = "",
   delay = 0,
-  variant = "fadeInUp"
+  variant = "fadeInUp",
 }: MotionSectionProps) {
   const selectedVariant = getVariant(variant);
-  
+
   return (
     <motion.div
       initial="hidden"
@@ -207,9 +212,9 @@ export function MotionSection({
           ...selectedVariant.visible,
           transition: {
             ...(selectedVariant.visible as { transition: object }).transition,
-            delay
-          }
-        }
+            delay,
+          },
+        },
       }}
       className={className}
     >
@@ -219,10 +224,10 @@ export function MotionSection({
 }
 
 // Stagger container component
-export function StaggerContainer({ 
-  children, 
+export function StaggerContainer({
+  children,
   className = "",
-  delay = 0 
+  delay = 0,
 }: StaggerContainerProps) {
   return (
     <motion.div
@@ -235,9 +240,9 @@ export function StaggerContainer({
           opacity: 1,
           transition: {
             staggerChildren: 0.1,
-            delayChildren: delay
-          }
-        }
+            delayChildren: delay,
+          },
+        },
       }}
       className={className}
     >
@@ -256,10 +261,10 @@ export function StaggerItem({ children, className = "" }: StaggerItemProps) {
 }
 
 // Animated card component with hover effect
-export function MotionCard({ 
-  children, 
+export function MotionCard({
+  children,
   className = "",
-  delay = 0
+  delay = 0,
 }: MotionCardProps) {
   return (
     <motion.div
@@ -269,22 +274,22 @@ export function MotionCard({
       viewport={{ once: true, margin: "-50px" }}
       variants={{
         hidden: { opacity: 0, y: 30 },
-        visible: { 
-          opacity: 1, 
+        visible: {
+          opacity: 1,
           y: 0,
           transition: {
             duration: 0.5,
             delay,
-            ease: [0.25, 0.46, 0.45, 0.94]
-          }
+            ease: [0.25, 0.46, 0.45, 0.94],
+          },
         },
         hover: {
           y: -8,
           transition: {
             duration: 0.3,
-            ease: "easeOut"
-          }
-        }
+            ease: "easeOut",
+          },
+        },
       }}
       className={className}
     >
@@ -294,20 +299,24 @@ export function MotionCard({
 }
 
 // Animated text reveal
-export function TextReveal({ 
-  children, 
+export function TextReveal({
+  children,
   className = "",
-  delay = 0
-}: { children: ReactNode; className?: string; delay?: number }) {
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
       className={className}
     >
@@ -317,11 +326,15 @@ export function TextReveal({
 }
 
 // Floating animation for decorative elements
-export function FloatingElement({ 
-  children, 
+export function FloatingElement({
+  children,
   className = "",
-  duration = 6
-}: { children: ReactNode; className?: string; duration?: number }) {
+  duration = 6,
+}: {
+  children: ReactNode;
+  className?: string;
+  duration?: number;
+}) {
   return (
     <motion.div
       animate={{
@@ -330,7 +343,7 @@ export function FloatingElement({
       transition={{
         duration,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut",
       }}
       className={className}
     >
@@ -340,19 +353,23 @@ export function FloatingElement({
 }
 
 // Animated counter
-export function AnimatedCounter({ 
-  value, 
+export function AnimatedCounter({
+  value,
   suffix = "",
-  className = "" 
-}: { value: number; suffix?: string; className?: string }) {
+  className = "",
+}: {
+  value: number;
+  suffix?: string;
+  className?: string;
+}) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ 
+      transition={{
         duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
       className={className}
     >
@@ -361,7 +378,8 @@ export function AnimatedCounter({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        {value}{suffix}
+        {value}
+        {suffix}
       </motion.span>
     </motion.span>
   );
@@ -382,10 +400,13 @@ export function PageTransition({ children }: { children: ReactNode }) {
 }
 
 // Magnetic button effect
-export function MagneticButton({ 
-  children, 
-  className = "" 
-}: { children: ReactNode; className?: string }) {
+export function MagneticButton({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
